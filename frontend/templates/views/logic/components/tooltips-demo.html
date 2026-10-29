@@ -1,0 +1,81 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Variaciones de Orientación (Posiciones) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Orientación (Top, Bottom, Left, Right)</h3>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+
+            <button class="btn btn-default" data-tooltip="Tooltip Arriba (Default)" data-tooltip-pos="top">
+                Arriba (Top)
+            </button>
+
+            <button class="btn btn-default" data-tooltip="Tooltip Abajo" data-tooltip-pos="bottom">
+                Abajo (Bottom)
+            </button>
+
+            <button class="btn btn-default" data-tooltip="Tooltip Izquierda" data-tooltip-pos="left">
+                Izquierda (Left)
+            </button>
+
+            <button class="btn btn-default" data-tooltip="Tooltip Derecha" data-tooltip-pos="right">
+                Derecha (Right)
+            </button>
+
+        </div>
+    </section>
+
+    <!-- 2. Variaciones de Color (7 Colores del Design System) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Colores del Design System</h3>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+
+            <button class="btn btn-default" data-tooltip="Información General" data-tooltip-color="default">
+                Default
+            </button>
+
+            <button class="btn btn-success" data-tooltip="Guardar cambios permanentemente" data-tooltip-color="success">
+                Success
+            </button>
+
+            <button class="btn btn-danger" data-tooltip="¡Atención! Acción irreversible" data-tooltip-color="danger">
+                Danger
+            </button>
+
+            <button class="btn btn-info" data-tooltip="Ver detalles del servidor C" data-tooltip-color="info">
+                Info
+            </button>
+
+            <button class="btn btn-warning" data-tooltip="Servicio con latencia alta" data-tooltip-color="warning">
+                Warning
+            </button>
+
+            <button class="btn btn-submit" data-tooltip="Enviar formulario a backend" data-tooltip-color="submit">
+                Submit
+            </button>
+
+            <button class="btn btn-legal" data-tooltip="Licencia comercial activa" data-tooltip-color="legal">
+                Legal
+            </button>
+
+        </div>
+    </section>
+
+    <!-- 3. Tooltips aplicados a Íconos e Inputs -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Uso en Botones de Ícono e Inputs</h3>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+
+            <!-- Ícono con Tooltip -->
+            <button class="btn btn-default" data-tooltip="Editar Configuración" data-tooltip-color="info" data-tooltip-pos="right">
+                <span class="icon icon-user icon-sm"></span>
+            </button>
+
+            <!-- Label con aclaración -->
+            <span class="label label-soft-warning" data-tooltip="Requiere reinicio de proceso" data-tooltip-color="warning">
+                Pendiente de Aplicar 🛈
+            </span>
+
+        </div>
+    </section>
+
+</div>

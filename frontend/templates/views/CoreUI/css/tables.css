@@ -1,0 +1,195 @@
+/* =================================================================
+   chassisCore - tables.css (Design System: DataTables & Grid)
+   ================================================================ */
+
+/* Contenedor Principal de la Tabla con Filtros y Paginación */
+.table-container {
+    background-color: #121316;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* --- Barra Superior de Controles (Buscador, Filas por página y Exportación) --- */
+.table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.table-toolbar-left,
+.table-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.table-search-input {
+    min-width: 240px;
+}
+
+.table-length-select {
+    width: auto;
+    display: inline-block;
+}
+
+/* --- Envoltorio de Tabla con Scroll Responsivo --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- Estructura Principal de la Tabla --- */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    color: #f3f4f6;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #27272a;
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #0d0e11;
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    user-select: none;
+    white-space: nowrap;
+}
+
+/* Encabezados Ordenables (Sortable Headers) */
+.table th.sortable {
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.table th.sortable:hover {
+    color: #ffffff;
+    background-color: #18181b;
+}
+
+.table th .sort-icon {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.7rem;
+    color: #52525b;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.table th.sort-asc .sort-icon {
+    color: #3b82f6;
+    content: "▲";
+}
+
+.table th.sort-desc .sort-icon {
+    color: #3b82f6;
+    content: "▼";
+}
+
+/* Variantes de Filas (Striped, Hover, Bordered, Compact) */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.015);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #1a1b20;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #27272a;
+}
+
+.table-sm th,
+.table-sm td {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.75rem;
+}
+
+/* --- Barra Inferior de Paginación --- */
+.table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #27272a;
+}
+
+.table-info {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.page-btn {
+    min-width: 30px;
+    height: 30px;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #9ca3af;
+    background-color: #090a0c;
+    border: 1px solid #27272a;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: #1a1b20;
+    color: #ffffff;
+    border-color: #3f3f46;
+}
+
+.page-btn.active {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* =================================================================
+   VARIANTES DE COLOR PARA FILAS Y CELDAS (7 Colores)
+   ================================================================ */
+
+.table-default, tr.table-default td { background-color: rgba(63, 63, 70, 0.15) !important; color: #f3f4f6; }
+.table-success, tr.table-success td { background-color: rgba(22, 163, 74, 0.15) !important; color: #4ade80; }
+.table-danger,  tr.table-danger td  { background-color: rgba(220, 38, 38, 0.15) !important; color: #f87171; }
+.table-info,    tr.table-info td    { background-color: rgba(14, 165, 233, 0.15) !important; color: #38bdf8; }
+.table-warning, tr.table-warning td { background-color: rgba(217, 119, 6, 0.15) !important; color: #fbbf24; }
+.table-submit,  tr.table-submit td  { background-color: rgba(37, 99, 235, 0.15) !important; color: #60a5fa; }
+.table-legal,   tr.table-legal td   { background-color: rgba(24, 24, 27, 0.5) !important;   color: #a1a1aa; }

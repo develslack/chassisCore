@@ -1,0 +1,35 @@
+/* =================================================================
+   chassisCore - core.css (UI Master & Variables)
+   ================================================================ */
+
+:root {
+    /* Paleta de colores Dark Mode (Tonos que descansen la vista) */
+    --bg-primary: #0a0a0c;      /* Negro profundo base */
+    --bg-secondary: #121316;    /* Superficies, tarjetas, inputs */
+    --bg-tertiary: #1a1b20;     /* Bordes sutiles, hovers */
+    --accent: #3b82f6;          /* Azul tecnológico de acento */
+    --accent-hover: #2563eb;
+
+    --text-main: #f3f4f6;       /* Blanco suave para lectura principal */
+    --text-muted: #9ca3af;      /* Gris medio para textos secundarios */
+    --border-color: #27272a;    /* Bordes sutiles */
+
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --radius: 8px;
+    --transition: 0.15s ease-in-out;
+}
+
+/* Reset Global & Responsive Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.5;
+    min-height: 100vh;
+}

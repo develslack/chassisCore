@@ -1,0 +1,66 @@
+<!-- Botones disparadores de prueba -->
+<div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+    <button class="btn btn-danger" onclick="LibCore.openModal('modal-eliminar')">
+        Modal Danger (sm)
+    </button>
+    <button class="btn btn-success" onclick="LibCore.openModal('modal-guardar')">
+        Modal Success (md)
+    </button>
+    <button class="btn btn-info" onclick="LibCore.openModal('modal-info-lg')">
+        Modal Info (lg)
+    </button>
+</div>
+
+<!-- Modal Confirmación de Eliminación -->
+<div id="modal-eliminar" class="modal-backdrop">
+    <div class="modal modal-sm modal-danger">
+        <div class="modal-header">
+            <h4 class="modal-title">Confirmar Eliminación</h4>
+            <button class="btn-modal-close" data-core-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>¿Está seguro de que desea eliminar este registro?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default btn-sm" data-core-dismiss="modal">Cancelar</button>
+
+            <!-- Al hacer clic: ejecutamos la acción, disparamos el Toast y cerramos el modal -->
+            <button class="btn btn-danger btn-sm"
+                    onclick="LibCore.toast('Registro eliminado con éxito.', 'success', 'Operación Completada'); LibCore.closeModal('modal-eliminar');">
+                Eliminar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 2. Modal Mediano (md) - Success (Formulario / Guardar) -->
+<div id="modal-guardar" class="modal-backdrop">
+    <div class="modal modal-md modal-success">
+        <div class="modal-header">
+            <h4 class="modal-title">Operación Exitosa</h4>
+            <button class="btn-modal-close" data-core-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Los cambios en la configuración del servidor fueron aplicados correctamente.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success btn-sm" data-core-dismiss="modal">Aceptar</button>
+        </div>
+    </div>
+</div>
+
+<!-- 3. Modal Grande (lg) - Info (Vista previa de datos) -->
+<div id="modal-info-lg" class="modal-backdrop">
+    <div class="modal modal-lg modal-info">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalles del Sistema</h4>
+            <button class="btn-modal-close" data-core-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Aquí se pueden desplegar tablas de resumen, logs extensos o formularios complejos multitarea.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default btn-sm" data-core-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</div>

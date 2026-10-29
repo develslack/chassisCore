@@ -1,0 +1,123 @@
+/* =================================================================
+   chassisCore - tabs.css (Design System: Navegación por Pestañas)
+   ================================================================ */
+
+/* Contenedor Principal de Navegación */
+.nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 1.25rem;
+    list-style: none;
+    border-bottom: 1px solid #27272a;
+    gap: 0.25rem;
+}
+
+/* Ítem / Botón de Pestaña */
+.nav-tab-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #9ca3af;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: -1px;
+}
+
+.nav-tab-item:hover {
+    color: #f3f4f6;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.nav-tab-item.disabled,
+.nav-tab-item:disabled {
+    color: #52525b;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* --- Estado Activo por Defecto --- */
+.nav-tab-item.active {
+    color: #ffffff;
+    border-bottom-color: #3f3f46;
+    font-weight: 600;
+}
+
+/* --- Contenedor de Paneles de Contenido --- */
+.tab-content {
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tab-pane.active {
+    display: block;
+    opacity: 1;
+}
+
+/* =================================================================
+   VARIANTES DE COLOR PARA PESTAÑAS ACTIVAS (7 Colores)
+   ================================================================ */
+
+/* A Nivel de Grupo (.nav-tabs-*) o a Nivel Individual (.nav-tab-*) */
+
+/* 1. Default (Plateado) */
+.nav-tabs-default .nav-tab-item.active,
+.nav-tab-default.active {
+    color: #f3f4f6;
+    border-bottom-color: #71717a;
+}
+
+/* 2. Success (Verde) */
+.nav-tabs-success .nav-tab-item.active,
+.nav-tab-success.active {
+    color: #4ade80;
+    border-bottom-color: #16a34a;
+}
+
+/* 3. Danger (Rojo) */
+.nav-tabs-danger .nav-tab-item.active,
+.nav-tab-danger.active {
+    color: #f87171;
+    border-bottom-color: #dc2626;
+}
+
+/* 4. Info (Celeste) */
+.nav-tabs-info .nav-tab-item.active,
+.nav-tab-info.active {
+    color: #38bdf8;
+    border-bottom-color: #0ea5e9;
+}
+
+/* 5. Warning (Amarillo Mostaza) */
+.nav-tabs-warning .nav-tab-item.active,
+.nav-tab-warning.active {
+    color: #fbbf24;
+    border-bottom-color: #d97706;
+}
+
+/* 6. Submit (Azul) */
+.nav-tabs-submit .nav-tab-item.active,
+.nav-tab-submit.active {
+    color: #60a5fa;
+    border-bottom-color: #2563eb;
+}
+
+/* 7. Legal (Negro) */
+.nav-tabs-legal .nav-tab-item.active,
+.nav-tab-legal.active {
+    color: #e4e4e7;
+    border-bottom-color: #18181b;
+}

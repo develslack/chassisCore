@@ -1,0 +1,101 @@
+/* =================================================================
+   chassisCore - alerts.css (Design System: Alertas Inline)
+   ================================================================ */
+
+.alert {
+    position: relative;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #27272a;
+    background-color: #121316;
+    color: #f3f4f6;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.alert-content {
+    flex-grow: 1;
+}
+
+.alert-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Botón de Cierre */
+.btn-alert-close {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-alert-close:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Variantes de Color (Borde Izquierdo + Tono de Fondo) --- */
+
+/* 1. Default (Plateado) */
+.alert-default {
+    border-left: 4px solid #3f3f46;
+    background-color: rgba(63, 63, 70, 0.12);
+}
+
+/* 2. Success (Verde) */
+.alert-success {
+    border-left: 4px solid #16a34a;
+    background-color: rgba(22, 163, 74, 0.12);
+}
+
+/* 3. Danger (Rojo) */
+.alert-danger {
+    border-left: 4px solid #dc2626;
+    background-color: rgba(220, 38, 38, 0.12);
+}
+
+/* 4. Info (Celeste) */
+.alert-info {
+    border-left: 4px solid #0ea5e9;
+    background-color: rgba(14, 165, 233, 0.12);
+}
+
+/* 5. Warning (Amarillo Mostaza) */
+.alert-warning {
+    border-left: 4px solid #d97706;
+    background-color: rgba(217, 119, 6, 0.12);
+}
+
+/* 6. Submit (Azul) */
+.alert-submit {
+    border-left: 4px solid #2563eb;
+    background-color: rgba(37, 99, 235, 0.12);
+}
+
+/* 7. Legal (Negro) */
+.alert-legal {
+    border-left: 4px solid #18181b;
+    background-color: rgba(24, 24, 27, 0.5);
+}

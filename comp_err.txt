@@ -1,0 +1,53 @@
+En el fichero incluido desde backend/src/system/routes.c:8:
+backend/src/system/auth.h:5:13: aviso: ‘route_home’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+    5 | static void route_home(int client, const char *body);
+      |             ^~~~~~~~~~
+backend/src/system/auth.h:6:13: aviso: ‘route_password’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+    6 | static void route_password(int client, const char *body);
+      |             ^~~~~~~~~~~~~~
+backend/src/system/auth.h:7:13: aviso: ‘route_change_password’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+    7 | static void route_change_password(int client, const char *body);
+      |             ^~~~~~~~~~~~~~~~~~~~~
+En el fichero incluido desde backend/src/system/routes.c:9:
+backend/src/system/users.h:8:13: aviso: ‘route_get_users’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+    8 | static void route_get_users(int client, const char *body);
+      |             ^~~~~~~~~~~~~~~
+backend/src/system/users.h:9:13: aviso: ‘route_get_register’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+    9 | static void route_get_register(int client, const char *body);
+      |             ^~~~~~~~~~~~~~~~~~
+backend/src/system/users.h:10:13: aviso: ‘route_post_register’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   10 | static void route_post_register(int client, const char *body);
+      |             ^~~~~~~~~~~~~~~~~~~
+En el fichero incluido desde backend/src/system/routes.c:10:
+backend/src/system/session_manager.h:24:13: aviso: ‘trim_string’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   24 | static void trim_string(char *str);
+      |             ^~~~~~~~~~~
+En el fichero incluido desde backend/src/system/routes.c:10:
+backend/src/system/session_manager.h:52:13: aviso: ‘route_post_set_session_context’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   52 | static void route_post_set_session_context(int client, const char* body);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend/src/system/session_manager.h:53:13: aviso: ‘route_post_logout_session’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   53 | static void route_post_logout_session(int client, const char* body);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+En el fichero incluido desde backend/src/bussiness/users_service.c:10:
+backend/src/bussiness/../system/session_manager.h:24:13: aviso: ‘trim_string’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   24 | static void trim_string(char *str);
+      |             ^~~~~~~~~~~
+En el fichero incluido desde backend/src/bussiness/users_service.c:10:
+backend/src/bussiness/../system/session_manager.h:52:13: aviso: ‘route_post_set_session_context’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   52 | static void route_post_set_session_context(int client, const char* body);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend/src/bussiness/../system/session_manager.h:53:13: aviso: ‘route_post_logout_session’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   53 | static void route_post_logout_session(int client, const char* body);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+En el fichero incluido desde backend/src/main.c:11:
+backend/src/system/session_manager.h:24:13: aviso: ‘trim_string’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   24 | static void trim_string(char *str);
+      |             ^~~~~~~~~~~
+En el fichero incluido desde backend/src/main.c:11:
+backend/src/system/session_manager.h:52:13: aviso: ‘route_post_set_session_context’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   52 | static void route_post_set_session_context(int client, const char* body);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend/src/system/session_manager.h:53:13: aviso: ‘route_post_logout_session’ se declaró ‘static’ pero nunca se define [-Wunused-function]
+   53 | static void route_post_logout_session(int client, const char* body);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~

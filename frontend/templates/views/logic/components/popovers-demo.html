@@ -1,0 +1,116 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Popovers con Variantes de Color (7 Colores) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Popovers Tematizados por Color</h3>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+
+            <!-- Popover Info (Celeste) -->
+            <div class="popover-wrapper">
+                <button class="btn btn-info" data-core-toggle="popover" data-target="pop-info">
+                    Popover Info
+                </button>
+
+                <div id="pop-info" class="popover popover-bottom popover-info">
+                    <div class="popover-header">
+                        <span>Información de Red</span>
+                        <button class="btn-popover-close" data-core-dismiss="popover">&times;</button>
+                    </div>
+                    <div class="popover-body">
+                        Dirección IP actual: 192.168.1.50.<br>
+                        Interfaz eth0 en línea sin pérdida de paquetes.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popover Warning (Amarillo Mostaza) -->
+            <div class="popover-wrapper">
+                <button class="btn btn-warning" data-core-toggle="popover" data-target="pop-warning">
+                    Popover Warning
+                </button>
+
+                <div id="pop-warning" class="popover popover-bottom popover-warning">
+                    <div class="popover-header">
+                        <span>Advertencia de Memoria</span>
+                        <button class="btn-popover-close" data-core-dismiss="popover">&times;</button>
+                    </div>
+                    <div class="popover-body">
+                        El uso de memoria RAM del proceso MariaDB superó el 80%.
+                    </div>
+                    <div class="popover-footer">
+                        <button class="btn btn-warning btn-sm" onclick="LibCore.toast('Purga ejecutada', 'warning')">Purgar Cache</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popover Danger (Rojo) -->
+            <div class="popover-wrapper">
+                <button class="btn btn-danger" data-core-toggle="popover" data-target="pop-danger">
+                    Popover Danger
+                </button>
+
+                <div id="pop-danger" class="popover popover-bottom popover-danger">
+                    <div class="popover-header">
+                        <span>Confirmar Acción</span>
+                        <button class="btn-popover-close" data-core-dismiss="popover">&times;</button>
+                    </div>
+                    <div class="popover-body">
+                        ¿Desea detener el servicio de socket de transmisión en C?
+                    </div>
+                    <div class="popover-footer">
+                        <button class="btn btn-default btn-sm" data-core-dismiss="popover">Cancelar</button>
+                        <button class="btn btn-danger btn-sm" onclick="LibCore.toast('Servicio detenido', 'danger')">Detener</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popover Submit (Azul) -->
+            <div class="popover-wrapper">
+                <button class="btn btn-submit" data-core-toggle="popover" data-target="pop-submit">
+                    Popover Submit
+                </button>
+
+                <div id="pop-submit" class="popover popover-bottom popover-submit">
+                    <div class="popover-header">
+                        <span>Firma Digital</span>
+                    </div>
+                    <div class="popover-body">
+                        La petición será firmada electrónicamente y enviada al servidor.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. Posicionamiento (Top, Bottom, Left, Right) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Posicionamiento (Arriba, Abajo, Izquierda, Derecha)</h3>
+        <div style="display: flex; gap: 1.5rem; align-items: center; margin-top: 2rem; margin-left: 5rem;">
+
+            <!-- Arriba (Top) -->
+            <div class="popover-wrapper">
+                <button class="btn btn-default" data-core-toggle="popover" data-target="pop-pos-top">
+                    Top ▲
+                </button>
+                <div id="pop-pos-top" class="popover popover-top popover-default">
+                    <div class="popover-header">Popover Superior</div>
+                    <div class="popover-body">Se despliega hacia arriba del botón.</div>
+                </div>
+            </div>
+
+            <!-- Derecha (Right) -->
+            <div class="popover-wrapper">
+                <button class="btn btn-default" data-core-toggle="popover" data-target="pop-pos-right">
+                    Right ▶
+                </button>
+                <div id="pop-pos-right" class="popover popover-right popover-default">
+                    <div class="popover-header">Popover Derecho</div>
+                    <div class="popover-body">Se ubica al lado derecho del disparador.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>

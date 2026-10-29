@@ -1,0 +1,251 @@
+/* =================================================================
+   chassisCore - themes.css (Design System: Motor de Temas)
+   ================================================================ */
+
+/* --- 1. Tema Oscuro por Defecto (Dark Chassis) --- */
+:root,
+[data-theme="dark"] {
+    --bg-body: #090a0c;
+    --bg-surface: #121316;
+    --bg-surface-hover: #1a1b20;
+    --bg-input: #090a0c;
+    --border-color: #27272a;
+    --border-color-hover: #3f3f46;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-submit: #2563eb;
+    --accent-success: #16a34a;
+    --accent-danger: #dc2626;
+    --accent-warning: #d97706;
+    --accent-info: #0ea5e9;
+    --accent-default: #3f3f46;
+    --accent-legal: #18181b;
+}
+
+/* --- 2. Tema Claro (Light) --- */
+[data-theme="light"] {
+    --bg-body: #f4f4f5;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f1f1f3;
+    --bg-input: #ffffff;
+    --border-color: #e4e4e7;
+    --border-color-hover: #d4d4d8;
+    --text-main: #18181b;
+    --text-muted: #71717a;
+    --accent-submit: #2563eb;
+    --accent-success: #16a34a;
+    --accent-danger: #dc2626;
+    --accent-warning: #d97706;
+    --accent-info: #0284c7;
+    --accent-default: #a1a1aa;
+    --accent-legal: #27272a;
+}
+
+/* --- 3. Tema Drácula (Dracula Official) --- */
+[data-theme="dracula"] {
+    --bg-body: #21222c;
+    --bg-surface: #282a36;
+    --bg-surface-hover: #343746;
+    --bg-input: #1e1f29;
+    --border-color: #44475a;
+    --border-color-hover: #6272a4;
+    --text-main: #f8f8f2;
+    --text-muted: #6272a4;
+    --accent-submit: #bd93f9; /* Purple */
+    --accent-success: #50fa7b; /* Green */
+    --accent-danger: #ff5555;  /* Red */
+    --accent-warning: #f1fa8c; /* Yellow */
+    --accent-info: #8be9fd;    /* Cyan */
+    --accent-default: #44475a;
+    --accent-legal: #ff79c6;   /* Pink */
+}
+
+/* --- 4. Ubuntu (Human Theme / Yaru Aubergine & Orange) --- */
+[data-theme="ubuntu"] {
+    --bg-body: #2c001e;
+    --bg-surface: #380c2a;
+    --bg-surface-hover: #4a153b;
+    --bg-input: #230118;
+    --border-color: #5e2750;
+    --border-color-hover: #77216f;
+    --text-main: #ffffff;
+    --text-muted: #cea2c5;
+    --accent-submit: #e95420; /* Ubuntu Orange */
+    --accent-success: #38b44a;
+    --accent-danger: #ef2929;
+    --accent-warning: #fce94f;
+    --accent-info: #729fcf;
+    --accent-default: #77216f;
+    --accent-legal: #5e2750;
+}
+
+/* --- 5. Windows XP (Luna Blue & Silver) --- */
+[data-theme="win-xp"] {
+    --bg-body: #ece9d8;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f5f3e7;
+    --bg-input: #ffffff;
+    --border-color: #7f9db9;
+    --border-color-hover: #0058e6;
+    --text-main: #000000;
+    --text-muted: #4d4d4d;
+    --accent-submit: #0058e6; /* XP Blue */
+    --accent-success: #32a852; /* XP Green Start */
+    --accent-danger: #e62e00;
+    --accent-warning: #e6a100;
+    --accent-info: #0088cc;
+    --accent-default: #b0b0b0;
+    --accent-legal: #333333;
+}
+
+/* --- 6. Windows 7 (Aero Slate & Glass) --- */
+[data-theme="win7"] {
+    --bg-body: #1c2833;
+    --bg-surface: rgba(30, 42, 56, 0.9);
+    --bg-surface-hover: rgba(45, 62, 80, 0.9);
+    --bg-input: rgba(15, 23, 32, 0.8);
+    --border-color: #3a506b;
+    --border-color-hover: #5bc0be;
+    --text-main: #e0f2fe;
+    --text-muted: #8da9c4;
+    --accent-submit: #1f7a8c;
+    --accent-success: #2a9d8f;
+    --accent-danger: #e63946;
+    --accent-warning: #f4a261;
+    --accent-info: #00b4d8;
+    --accent-default: #3a506b;
+    --accent-legal: #0b132b;
+}
+
+/* --- 7. Windows 10 (Arylic Dark) --- */
+[data-theme="win10"] {
+    --bg-body: #000000;
+    --bg-surface: #1f1f1f;
+    --bg-surface-hover: #2d2d2d;
+    --bg-input: #121212;
+    --border-color: #333333;
+    --border-color-hover: #0078d4;
+    --text-main: #ffffff;
+    --text-muted: #cccccc;
+    --accent-submit: #0078d4; /* Win10 Blue Accent */
+    --accent-success: #107c41;
+    --accent-danger: #e81123;
+    --accent-warning: #ff8c00;
+    --accent-info: #00b7c3;
+    --accent-default: #505050;
+    --accent-legal: #101010;
+}
+
+/* --- 8. Windows 11 (Mica Dark Soft) --- */
+[data-theme="win11"] {
+    --bg-body: #202020;
+    --bg-surface: #2c2c2c;
+    --bg-surface-hover: #383838;
+    --bg-input: #1c1c1c;
+    --border-color: #404040;
+    --border-color-hover: #60cdff;
+    --text-main: #ffffff;
+    --text-muted: #adadad;
+    --accent-submit: #60cdff; /* Win11 Soft Blue */
+    --accent-success: #6ccb5f;
+    --accent-danger: #ff99a4;
+    --accent-warning: #fce100;
+    --accent-info: #70e000;
+    --accent-default: #404040;
+    --accent-legal: #1a1a1a;
+}
+
+/* --- 9. macOS (San Francisco Dark) --- */
+[data-theme="macos"] {
+    --bg-body: #1e1e1e;
+    --bg-surface: #282828;
+    --bg-surface-hover: #323232;
+    --bg-input: #181818;
+    --border-color: #3a3a3c;
+    --border-color-hover: #0a84ff;
+    --text-main: #f5f5f7;
+    --text-muted: #8e8e93;
+    --accent-submit: #0a84ff; /* macOS Blue */
+    --accent-success: #30d158;
+    --accent-danger: #ff453a;
+    --accent-warning: #ffd60a;
+    --accent-info: #64d2ff;
+    --accent-default: #3a3a3c;
+    --accent-legal: #1c1c1e;
+}
+
+/* --- 10. KDE Plasma Dark (Breeze Dark) --- */
+[data-theme="kde-dark"] {
+    --bg-body: #2a2e32;
+    --bg-surface: #31363b;
+    --bg-surface-hover: #3a4045;
+    --bg-input: #232629;
+    --border-color: #4d565f;
+    --border-color-hover: #3daee9;
+    --text-main: #fcfcfc;
+    --text-muted: #a1a9b1;
+    --accent-submit: #3daee9; /* Breeze Cyan Blue */
+    --accent-success: #2ecc71;
+    --accent-danger: #e74c3c;
+    --accent-warning: #f39c12;
+    --accent-info: #1abc9c;
+    --accent-default: #4d565f;
+    --accent-legal: #1b1e20;
+}
+
+/* --- 11. KDE Plasma Light (Breeze Light) --- */
+[data-theme="kde-light"] {
+    --bg-body: #eff0f1;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #e5e7e8;
+    --bg-input: #fcfcfc;
+    --border-color: #bdc3c7;
+    --border-color-hover: #3daee9;
+    --text-main: #232629;
+    --text-muted: #7f8c8d;
+    --accent-submit: #3daee9;
+    --accent-success: #27ae60;
+    --accent-danger: #c0392b;
+    --accent-warning: #d35400;
+    --accent-info: #2980b9;
+    --accent-default: #bdc3c7;
+    --accent-legal: #31363b;
+}
+
+/* --- 12. Ubuntu Ambiance Darkness (Classic GTK3 Dark) --- */
+[data-theme="ubuntu-ambiance"] {
+    --bg-body: #2c2b27;
+    --bg-surface: #3c3b37;
+    --bg-surface-hover: #4a4943;
+    --bg-input: #282724;
+    --border-color: #53524b;
+    --border-color-hover: #f05a28;
+    --text-main: #dfdbd2;
+    --text-muted: #a39e93;
+    --accent-submit: #f05a28; /* Ubuntu Classic Orange */
+    --accent-success: #38b44a;
+    --accent-danger: #ef2929;
+    --accent-warning: #fce94f;
+    --accent-info: #729fcf;
+    --accent-default: #53524b;
+    --accent-legal: #282724;
+}
+
+/* Globales aplicados con variables de tema */
+body {
+    background-color: var(--bg-body) !important;
+    color: var(--text-main) !important;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.panel, .modal, .table-container, .jumbotron, .list-group, .collapse-card, .popover {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border-color) !important;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.form-control, .form-select, .form-file-label {
+    background-color: var(--bg-input) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}

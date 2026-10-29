@@ -1,0 +1,59 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Barras Estilo Windows XP (Bloques Segmentados) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Estilo Windows XP (Segmentado)</h3>
+
+        <!-- XP Success (Verde clásico XP) -->
+        <div class="progress progress-xp progress-success">
+            <div class="progress-bar" style="width: 65%;">65%</div>
+        </div>
+
+        <!-- XP Submit (Azul) -->
+        <div class="progress progress-xp progress-submit">
+            <div class="progress-bar" style="width: 40%;">Cargando sistema...</div>
+        </div>
+
+        <!-- XP Danger (Rojo) -->
+        <div class="progress progress-xp progress-danger">
+            <div class="progress-bar" style="width: 85%;">85% Crítico</div>
+        </div>
+
+        <!-- XP Indeterminada / Marquee en bucle -->
+        <p style="font-size: 0.75rem; color: #71717a; margin-bottom: 0.35rem;">Carga Indeterminada (Marquee XP):</p>
+        <div class="progress progress-xp progress-warning progress-indeterminate">
+            <div class="progress-bar"></div>
+        </div>
+    </section>
+
+    <!-- 2. Barras Estilo Ubuntu 8.04 Hardy Heron (Glossy + Franjas) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Estilo Ubuntu 8.04 (Human / Hardy Heron)</h3>
+
+        <!-- Ubuntu Warning (El color naranja/marrón emblemático de Ubuntu) -->
+        <div class="progress progress-ubuntu progress-warning progress-animated">
+            <div class="progress-bar" style="width: 75%;">75% - Descargando paquetes...</div>
+        </div>
+
+        <!-- Ubuntu Info (Celeste Glossy) -->
+        <div id="mi-barra-ubuntu" class="progress progress-ubuntu progress-info progress-animated">
+            <div class="progress-bar" style="width: 50%;">50%</div>
+        </div>
+
+        <!-- Ubuntu Success (Verde Glossy) -->
+        <div class="progress progress-ubuntu progress-success">
+            <div class="progress-bar" style="width: 100%;">Completado</div>
+        </div>
+    </section>
+
+    <!-- 3. Botones para probar la actualización dinámica -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">Prueba Dinámica por JS</h3>
+        <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-default btn-sm" onclick="LibCore.setProgress('mi-barra-ubuntu', 25, '25%')">25%</button>
+            <button class="btn btn-default btn-sm" onclick="LibCore.setProgress('mi-barra-ubuntu', 70, '70%')">70%</button>
+            <button class="btn btn-default btn-sm" onclick="LibCore.setProgress('mi-barra-ubuntu', 100, '100% Completado')">100%</button>
+        </div>
+    </section>
+
+</div>

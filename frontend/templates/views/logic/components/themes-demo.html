@@ -1,0 +1,61 @@
+<div class="panel panel-default">
+    <div class="panel-header">
+        <h3 class="panel-title">
+            <span class="icon icon-user icon-sm"></span> Personalización de la Interfaz Visual
+        </h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group" style="max-width: 400px; margin-bottom: 2rem;">
+            <label class="form-label" for="select-theme-switcher">Seleccionar Tema Visual</label>
+            <select id="select-theme-switcher" class="form-select" onchange="LibCore.setTheme(this.value)">
+                <optgroup label="Estándar">
+                    <option value="dark">Chassis Dark (Oscuro por Defecto)</option>
+                    <option value="light">Chassis Light (Luminoso / Claro)</option>
+                    <option value="dracula">Dracula Theme (Edición Programador)</option>
+                </optgroup>
+                <optgroup label="Sistemas Operativos">
+                    <option value="win11">Windows 11 (Mica Dark)</option>
+                    <option value="win10">Windows 10 (Acrylic)</option>
+                    <option value="win7">Windows 7 (Aero Glass)</option>
+                    <option value="win-xp">Windows XP (Luna Blue)</option>
+                    <option value="macos">macOS (San Francisco Dark)</option>
+                    <option value="ubuntu">Ubuntu (Human / Yaru Aubergine)</option>
+                    <option value="ubuntu-ambiance">Ubuntu (Ambiance Darkness GTK3)</option>
+                    <option value="kde-dark">KDE Plasma (Breeze Dark)</option>
+                    <option value="kde-light">KDE Plasma (Breeze Light)</option>
+                </optgroup>
+            </select>
+            <span class="form-text">El tema seleccionado se guardará automáticamente en su navegador.</span>
+        </div>
+
+        <!-- Muestra dinámica para verificar contraste instantáneo -->
+        <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--text-muted);">Muestrario de Componentes en Vivo</h4>
+
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <button class="btn btn-submit">Botón Submit</button>
+            <button class="btn btn-success">Botón Success</button>
+            <button class="btn btn-danger">Botón Danger</button>
+            <button class="btn btn-warning">Botón Warning</button>
+            <button class="btn btn-info">Botón Info</button>
+            <button class="btn btn-default">Botón Default</button>
+        </div>
+
+        <div class="alert alert-info">
+            <div class="alert-content">
+                Las variables CSS reaccionan instantáneamente al cambiar la selección sin parpadeos ni recargas de página.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Sincronizar el valor del selector con el tema actualmente activo
+    document.addEventListener('DOMContentLoaded', function() {
+        const select = document.getElementById('select-theme-switcher');
+        if (select) {
+            select.value = LibCore.getTheme();
+        }
+    });
+</script>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chassisCore - Dashboard</title>
+    <link rel="stylesheet" href="views/CoreUI/css/core.css">
+    <link rel="stylesheet" href="views/CoreUI/css/icons-basic.css">
+    <link rel="stylesheet" href="views/CoreUI/css/navbar-dashboard.css">
+    <link rel="stylesheet" href="views/CoreUI/css/buttons.css">
+    <link rel="stylesheet" href="views/CoreUI/css/modals.css">
+    <link rel="stylesheet" href="views/CoreUI/css/toasts.css">
+    <link rel="stylesheet" href="views/CoreUI/css/panels.css">
+    <link rel="stylesheet" href="views/CoreUI/css/jumbotron.css">
+    <link rel="stylesheet" href="views/CoreUI/css/alerts.css">
+    <link rel="stylesheet" href="views/CoreUI/css/badges.css">
+    <link rel="stylesheet" href="views/CoreUI/css/progress.css">
+    <link rel="stylesheet" href="views/CoreUI/css/list-groups.css">
+    <link rel="stylesheet" href="views/CoreUI/css/collapse.css">
+    <link rel="stylesheet" href="views/CoreUI/css/tabs.css">
+    <link rel="stylesheet" href="views/CoreUI/css/inputs.css">
+    <link rel="stylesheet" href="views/CoreUI/css/tooltips.css">
+    <link rel="stylesheet" href="views/CoreUI/css/popovers.css">
+    <link rel="stylesheet" href="views/CoreUI/css/tables.css">
+    <link rel="stylesheet" href="views/CoreUI/css/loaders.css">
+    <link rel="stylesheet" href="views/CoreUI/css/animations.css">
+    <link rel="stylesheet" href="views/CoreUI/css/animations-advanced.css">
+    <link rel="stylesheet" href="views/CoreUI/css/themes.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="app-layout">
+        <!-- Sidebar Lateral (Única instancia) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>chassisCore</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" data-route="inicio" class="nav-item active">
+                    <span class="icon icon-home icon-sm"></span> Inicio
+                </a>
+                <a href="#" data-route="perfil" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Mi Perfil
+                </a>
+                <a href="/buttons-demo" data-route="buttons-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Buttons Demo
+                </a>
+                <a href="/modals-demo" data-route="modals-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Modals Demo
+                </a>
+                <a href="/panels-demo" data-route="panels-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Panels Demo
+                </a>
+                <a href="/jumbotron-demo" data-route="jumbotron-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Jumbotron Demo
+                </a>
+                <a href="/badges-demo" data-route="badges-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Badges Demo
+                </a>
+                <a href="/progress-demo" data-route="progress-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Progress Demo
+                </a>
+                <a href="/list-groups-demo" data-route="list-groups-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> List-Groups Demo
+                </a>
+                <a href="/collapse-demo" data-route="collapse-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Collapse Demo
+                </a>
+                <a href="/tabs-demo" data-route="tabs-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Tabs Demo
+                </a>
+                <a href="/inputs-demo" data-route="inputs-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Inputs Demo
+                </a>
+                <a href="/tooltips-demo" data-route="tooltips-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Tooltips Demo
+                </a>
+                <a href="/popovers-demo" data-route="popovers-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Popovers Demo
+                </a>
+                <a href="/tables-demo" data-route="tables-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Tables Demo
+                </a>
+                <a href="/loaders-demo" data-route="loaders-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Loaders Demo
+                </a>
+                <a href="/animations-demo" data-route="animations-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Animations Demo
+                </a>
+                <a href="/animations-advanced-demo" data-route="animations-advanced-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Animations Demo
+                </a>
+                <a href="/themes-demo" data-route="themes-demo" class="nav-item">
+                    <span class="icon icon-user icon-sm"></span> Themes Demo
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Topbar y Área Principal -->
+        <div class="main-wrapper">
+            <header class="topbar">
+                <span class="view-title">Panel Principal</span>
+                <div class="topbar-right">
+                    <span class="user-info">Administrador</span>
+                    <button class="btn-subtle" onclick="location.href='/'">Cerrar Sesión</button>
+                </div>
+            </header>
+
+            <!-- CONTENEDOR INTERNO: Aquí se inyectan SOLO los componentes parciales -->
+            <main id="dashboard-view" class="content-viewport">
+                <!-- El motor CoreUI cargará aquí inicio.html, perfil.html, etc. -->
+            </main>
+        </div>
+    </div>
+
+    <script src="views/CoreUI/js/libcore.js"></script>
+    <script src="views/CoreUI/js/handler.js"></script>
+    <script src="views/logic/app/logic.js"></script>
+    <script src="views/CoreUI/js/tables.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            CoreUI.init({
+                viewContainerId: 'dashboard-view',
+                viewsFolder: 'views/logic/components/',
+                defaultView: 'inicio',
+                baseRoute: '/dashboard',
+                preserveBaseRoute: true // <- Bloquea la URL en /dashboard para todas las sub-vistas
+            }, AppLogic);
+        });
+    </script>
+</body>
+</html>

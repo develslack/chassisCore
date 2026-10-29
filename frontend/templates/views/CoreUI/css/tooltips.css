@@ -1,0 +1,223 @@
+/* =================================================================
+   chassisCore - tooltips.css (Design System: Tooltips & Hints)
+   ================================================================ */
+
+/* Elemento disparador con tooltip */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Base de la burbuja y de la flecha */
+[data-tooltip]::before,
+[data-tooltip]::after {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    z-index: 100000;
+}
+
+/* Texto del Tooltip (Burbuja) */
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #ffffff;
+    background-color: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Flecha Indicadora del Tooltip */
+[data-tooltip]::before {
+    content: "";
+    border: 5px solid transparent;
+}
+
+/* =================================================================
+   POSICIONAMIENTO (Top, Bottom, Left, Right) - Default: Top
+   ================================================================ */
+
+/* --- Posición Superior (Top - Por defecto) --- */
+[data-tooltip]:not([data-tooltip-pos])::after,
+[data-tooltip][data-tooltip-pos="top"]::after {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    margin-bottom: 6px;
+}
+
+[data-tooltip]:not([data-tooltip-pos])::before,
+[data-tooltip][data-tooltip-pos="top"]::before {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: #3f3f46;
+}
+
+[data-tooltip]:not([data-tooltip-pos]):hover::after,
+[data-tooltip][data-tooltip-pos="top"]:hover::after,
+[data-tooltip]:not([data-tooltip-pos]):focus-visible::after,
+[data-tooltip][data-tooltip-pos="top"]:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+[data-tooltip]:not([data-tooltip-pos]):hover::before,
+[data-tooltip][data-tooltip-pos="top"]:hover::before,
+[data-tooltip]:not([data-tooltip-pos]):focus-visible::before,
+[data-tooltip][data-tooltip-pos="top"]:focus-visible::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Posición Inferior (Bottom) --- */
+[data-tooltip][data-tooltip-pos="bottom"]::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    margin-top: 6px;
+}
+
+[data-tooltip][data-tooltip-pos="bottom"]::before {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-color: #3f3f46;
+}
+
+[data-tooltip][data-tooltip-pos="bottom"]:hover::after,
+[data-tooltip][data-tooltip-pos="bottom"]:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+[data-tooltip][data-tooltip-pos="bottom"]:hover::before,
+[data-tooltip][data-tooltip-pos="bottom"]:focus-visible::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Posición Izquierda (Left) --- */
+[data-tooltip][data-tooltip-pos="left"]::after {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-4px);
+    margin-right: 6px;
+}
+
+[data-tooltip][data-tooltip-pos="left"]::before {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left-color: #3f3f46;
+}
+
+[data-tooltip][data-tooltip-pos="left"]:hover::after,
+[data-tooltip][data-tooltip-pos="left"]:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+[data-tooltip][data-tooltip-pos="left"]:hover::before,
+[data-tooltip][data-tooltip-pos="left"]:focus-visible::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Posición Derecha (Right) --- */
+[data-tooltip][data-tooltip-pos="right"]::after {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(4px);
+    margin-left: 6px;
+}
+
+[data-tooltip][data-tooltip-pos="right"]::before {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right-color: #3f3f46;
+}
+
+[data-tooltip][data-tooltip-pos="right"]:hover::after,
+[data-tooltip][data-tooltip-pos="right"]:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+[data-tooltip][data-tooltip-pos="right"]:hover::before,
+[data-tooltip][data-tooltip-pos="right"]:focus-visible::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =================================================================
+   VARIANTES DE COLOR (7 Colores)
+   ================================================================ */
+
+/* 1. Default (Plateado) */
+[data-tooltip-color="default"]::after { background-color: #27272a; border-color: #3f3f46; color: #f3f4f6; }
+[data-tooltip-color="default"][data-tooltip-pos="top"]::before,
+[data-tooltip-color="default"]:not([data-tooltip-pos])::before { border-top-color: #3f3f46; }
+[data-tooltip-color="default"][data-tooltip-pos="bottom"]::before { border-bottom-color: #3f3f46; }
+[data-tooltip-color="default"][data-tooltip-pos="left"]::before { border-left-color: #3f3f46; }
+[data-tooltip-color="default"][data-tooltip-pos="right"]::before { border-right-color: #3f3f46; }
+
+/* 2. Success (Verde) */
+[data-tooltip-color="success"]::after { background-color: #15803d; border-color: #166534; color: #ffffff; }
+[data-tooltip-color="success"][data-tooltip-pos="top"]::before,
+[data-tooltip-color="success"]:not([data-tooltip-pos])::before { border-top-color: #166534; }
+[data-tooltip-color="success"][data-tooltip-pos="bottom"]::before { border-bottom-color: #166534; }
+[data-tooltip-color="success"][data-tooltip-pos="left"]::before { border-left-color: #166534; }
+[data-tooltip-color="success"][data-tooltip-pos="right"]::before { border-right-color: #166534; }
+
+/* 3. Danger (Rojo) */
+[data-tooltip-color="danger"]::after { background-color: #b91c1c; border-color: #991b1b; color: #ffffff; }
+[data-tooltip-color="danger"][data-tooltip-pos="top"]::before,
+[data-tooltip-color="danger"]:not([data-tooltip-pos])::before { border-top-color: #991b1b; }
+[data-tooltip-color="danger"][data-tooltip-pos="bottom"]::before { border-bottom-color: #991b1b; }
+[data-tooltip-color="danger"][data-tooltip-pos="left"]::before { border-left-color: #991b1b; }
+[data-tooltip-color="danger"][data-tooltip-pos="right"]::before { border-right-color: #991b1b; }
+
+/* 4. Info (Celeste) */
+[data-tooltip-color="info"]::after { background-color: #0284c7; border-color: #0369a1; color: #ffffff; }
+[data-tooltip-color="info"][data-tooltip-pos="top"]::before,
+[data-tooltip-color="info"]:not([data-tooltip-pos])::before { border-top-color: #0369a1; }
+[data-tooltip-color="info"][data-tooltip-pos="bottom"]::before { border-bottom-color: #0369a1; }
+[data-tooltip-color="info"][data-tooltip-pos="left"]::before { border-left-color: #0369a1; }
+[data-tooltip-color="info"][data-tooltip-pos="right"]::before { border-right-color: #0369a1; }
+
+/* 5. Warning (Amarillo Mostaza) */
+[data-tooltip-color="warning"]::after { background-color: #b45309; border-color: #92400e; color: #ffffff; }
+[data-tooltip-color="warning"][data-tooltip-pos="top"]::before,
+[data-tooltip-color="warning"]:not([data-tooltip-pos])::before { border-top-color: #92400e; }
+[data-tooltip-color="warning"][data-tooltip-pos="bottom"]::before { border-bottom-color: #92400e; }
+[data-tooltip-color="warning"][data-tooltip-pos="left"]::before { border-left-color: #92400e; }
+[data-tooltip-color="warning"][data-tooltip-pos="right"]::before { border-right-color: #92400e; }
+
+/* 6. Submit (Azul) */
+[data-tooltip-color="submit"]::after { background-color: #1d4ed8; border-color: #1e40af; color: #ffffff; }
+[data-tooltip-color="submit"][data-tooltip-pos="top"]::before,
+[data-tooltip-color="submit"]:not([data-tooltip-pos])::before { border-top-color: #1e40af; }
+[data-tooltip-color="submit"][data-tooltip-pos="bottom"]::before { border-bottom-color: #1e40af; }
+[data-tooltip-color="submit"][data-tooltip-pos="left"]::before { border-left-color: #1e40af; }
+[data-tooltip-color="submit"][data-tooltip-pos="right"]::before { border-right-color: #1e40af; }
+
+/* 7. Legal (Negro) */
+[data-tooltip-color="legal"]::after { background-color: #090a0c; border-color: #27272a; color: #d4d4d8; }
+[data-tooltip-color="legal"][data-tooltip-pos="top"]::before,
+[data-tooltip-color="legal"]:not([data-tooltip-pos])::before { border-top-color: #27272a; }
+[data-tooltip-color="legal"][data-tooltip-pos="bottom"]::before { border-bottom-color: #27272a; }
+[data-tooltip-color="legal"][data-tooltip-pos="left"]::before { border-left-color: #27272a; }
+[data-tooltip-color="legal"][data-tooltip-pos="right"]::before { border-right-color: #27272a; }

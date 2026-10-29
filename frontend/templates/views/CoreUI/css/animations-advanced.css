@@ -1,0 +1,139 @@
+/* =================================================================
+   chassisCore - animations-advanced.css (UX Avanzada & Micro-interacciones)
+   ================================================================ */
+
+/* =================================================================
+   1. SKELETON SCREENS (Carga con Efecto Shimmer)
+   ================================================================ */
+.skeleton {
+    position: relative;
+    background-color: #1a1b20;
+    border-radius: 4px;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+.skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Formas predefinidas de Skeleton */
+.skeleton-text {
+    height: 12px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.skeleton-text-short { width: 60%; }
+.skeleton-text-title { height: 20px; width: 40%; margin-bottom: 12px; }
+
+.skeleton-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.skeleton-btn {
+    height: 36px;
+    width: 110px;
+    border-radius: 6px;
+}
+
+.skeleton-card {
+    padding: 1.25rem;
+    background-color: #121316;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* =================================================================
+   2. STAGGERED ENTRY (Entrada Secuencial en Cascada)
+   ================================================================ */
+.stagger-container > * {
+    opacity: 0;
+    animation: staggerFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-container > *:nth-child(1) { animation-delay: 0.03s; }
+.stagger-container > *:nth-child(2) { animation-delay: 0.08s; }
+.stagger-container > *:nth-child(3) { animation-delay: 0.13s; }
+.stagger-container > *:nth-child(4) { animation-delay: 0.18s; }
+.stagger-container > *:nth-child(5) { animation-delay: 0.23s; }
+.stagger-container > *:nth-child(6) { animation-delay: 0.28s; }
+.stagger-container > *:nth-child(7) { animation-delay: 0.33s; }
+.stagger-container > *:nth-child(8) { animation-delay: 0.38s; }
+
+@keyframes staggerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =================================================================
+   3. RIPPLE FX (Onda Táctil al Clic)
+   ================================================================ */
+.ripple-target {
+    position: relative;
+    overflow: hidden;
+}
+
+.core-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: scale(0);
+    animation: rippleAnimation 0.5s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* =================================================================
+   4. RESPLANDOR CONTEXTUAL (Ambient Glow FX)
+   ================================================================ */
+.glow-on-hover {
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glow-default:hover { border-color: #52525b; box-shadow: 0 0 15px rgba(82, 82, 91, 0.3); }
+.glow-success:hover { border-color: #16a34a; box-shadow: 0 0 15px rgba(22, 163, 74, 0.35); }
+.glow-danger:hover  { border-color: #dc2626; box-shadow: 0 0 15px rgba(220, 38, 38, 0.35); }
+.glow-info:hover    { border-color: #0ea5e9; box-shadow: 0 0 15px rgba(14, 165, 233, 0.35); }
+.glow-warning:hover { border-color: #d97706; box-shadow: 0 0 15px rgba(217, 119, 6, 0.35); }
+.glow-submit:hover  { border-color: #2563eb; box-shadow: 0 0 15px rgba(37, 99, 235, 0.35); }
+.glow-legal:hover   { border-color: #27272a; box-shadow: 0 0 15px rgba(39, 39, 42, 0.6); }

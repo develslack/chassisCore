@@ -1,0 +1,66 @@
+/* =================================================================
+   chassisCore - icons-basic.css
+   Mapeo atómico de íconos vectoriales SVG mediante CSS Masks
+   ================================================================ */
+
+.icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+/* Modificadores de Tamaño */
+.icon-sm { width: 14px; height: 14px; }
+.icon-lg { width: 22px; height: 22px; }
+
+/* Clases específicas mapeadas a la carpeta assets/icons/ */
+/* apps icons */
+.icon-accesories-calculator          { background-image: url('../assets/icons/apps/accessories-calculator.png'); }
+.icon-accesories-character-map          { background-image: url('../assets/icons/apps/accessories-character-map.png'); }
+.icon-accesories-dictionary-map          { background-image: url('../assets/icons/apps/accessories-dictionary.png'); }
+.icon-accesories-text-editor          { background-image: url('../assets/icons/apps/accessories-text-editor.png'); }
+.icon-accesories-acroread          { background-image: url('../assets/icons/apps/acroread.png'); }
+.icon-accesories-akanodi          { background-image: url('../assets/icons/apps/akonadi.png'); }
+.icon-accesories-akregator          { background-image: url('../assets/icons/apps/akregator.png'); }
+.icon-accesories-basket          { background-image: url('../assets/icons/apps/basket.png'); }
+.icon-accesories-Charm          { background-image: url('../assets/icons/apps/Charm.png'); }
+.icon-accesories-clock          { background-image: url('../assets/icons/apps/clock.png'); }
+.icon-accesories-device-notifier          { background-image: url('../assets/icons/apps/device-notifier.png'); }
+.icon-accesories-digikam          { background-image: url('../assets/icons/apps/digikam.png'); }
+.icon-accesories-esd          { background-image: url('../assets/icons/apps/esd.png'); }
+.icon-accesories-fontforge          { background-image: url('../assets/icons/apps/fontforge.png'); }
+.icon-accesories-graphics-viewer-document          { background-image: url('../assets/icons/apps/graphics-viewer-document.png'); }
+.icon-accesories-help-browser          { background-image: url('../assets/icons/apps/help-browser.png'); }
+.icon-accesories-hwinfo          { background-image: url('../assets/icons/apps/hwinfo.png'); }
+.icon-accesories-inkscape          { background-image: url('../assets/icons/apps/inkscape.png'); }
+.icon-accesories-internet-mail          { background-image: url('../assets/icons/apps/internet-mail.png'); }
+.icon-accesories-internet-telephony          { background-image: url('../assets/icons/apps/internet-telephony.png'); }
+.icon-accesories-internet-web-browser          { background-image: url('../assets/icons/apps/internet-web-browser.png'); }
+.icon-accesories-java          { background-image: url('../assets/icons/apps/java.png'); }
+.icon-accesories-k3b          { background-image: url('../assets/icons/apps/k3b.png'); }
+.icon-accesories-kaffeine          { background-image: url('../assets/icons/apps/kaffeine.png'); }
+.icon-accesories-kalarm          { background-image: url('../assets/icons/apps/kalarm.png'); }
+.icon-accesories-kblogger          { background-image: url('../assets/icons/apps/kblogger.png'); }
+.icon-accesories-system-users          { background-image: url('../assets/icons/apps/system-users.png'); }
+.icon-accesories-preferences-system-login          { background-image: url('../assets/icons/apps/preferences-system-login.png'); }
+.icon-accesories-preferences-desktop-user-password          { background-image: url('../assets/icons/apps/preferences-desktop-user-password.png'); }
+
+/* status icons */
+.icon-status-dialog-password    { background-image: url('../assets/icons/status/dialog-password.png'); }
+
+/* actions icons */
+.icon-actions-list-add-user { background-image: url('../assets/icons/actions/list-add-user.png'); }
+.icon-actions-layer-visible-on { background-image: url('../assets/icons/actions/layer-visible-on.png'); }
+.icon-actions-layer-visible-off { background-image: url('../assets/icons/actions/layer-visible-off.png'); }
+
+
+
+
+
+
+

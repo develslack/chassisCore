@@ -1,0 +1,121 @@
+/* =================================================================
+   chassisCore - animations.css (Design System: Animaciones Básicas)
+   ================================================================ */
+
+/* --- Control de Tiempos y Velocidad --- */
+.speed-fast   { animation-duration: 0.15s !important; transition-duration: 0.15s !important; }
+.speed-normal { animation-duration: 0.25s !important; transition-duration: 0.25s !important; }
+.speed-slow   { animation-duration: 0.45s !important; transition-duration: 0.45s !important; }
+
+/* --- Utilidades de Despliegue --- */
+.is-hidden {
+    display: none !important;
+}
+
+.is-visible {
+    display: block !important;
+}
+
+/* =================================================================
+   1. EFECTOS FADE (Opacidad)
+   ================================================================ */
+.fade-in {
+    animation: coreFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-out {
+    animation: coreFadeOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes coreFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes coreFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* =================================================================
+   2. EFECTOS SLIDE (Desplazamientos Vérticales/Horizontales)
+   ================================================================ */
+.slide-down {
+    animation: coreSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-up {
+    animation: coreSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-right {
+    animation: coreSlideRight 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-left {
+    animation: coreSlideLeft 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes coreSlideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes coreSlideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes coreSlideRight {
+    from { opacity: 0; transform: translateX(-15px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes coreSlideLeft {
+    from { opacity: 0; transform: translateX(15px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* =================================================================
+   3. EFECTOS ZOOM (Escalado)
+   ================================================================ */
+.zoom-in {
+    animation: coreZoomIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.zoom-out {
+    animation: coreZoomOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes coreZoomIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes coreZoomOut {
+    from { opacity: 1; transform: scale(1); }
+    to   { opacity: 0; transform: scale(0.92); }
+}
+
+/* =================================================================
+   4. ATENCIÓN Y FEEDBACK (Pulse & Shake)
+   ================================================================ */
+.pulse {
+    animation: corePulse 1.8s infinite ease-in-out;
+}
+
+.shake {
+    animation: coreShake 0.35s ease-in-out;
+}
+
+@keyframes corePulse {
+    0%   { transform: scale(1); opacity: 1; }
+    50%  { transform: scale(1.02); opacity: 0.85; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes coreShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}

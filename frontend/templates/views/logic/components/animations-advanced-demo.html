@@ -1,0 +1,59 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Skeleton Screen Placeholder -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">1. Skeleton Screen (Estado de Carga sin Salto de Diseño)</h3>
+
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <button class="btn btn-submit btn-sm" onclick="LibCore.renderSkeletonCard('demo-skeleton-box')">Simular Carga Skeleton</button>
+            <button class="btn btn-default btn-sm" onclick="document.getElementById('demo-skeleton-box').innerHTML = '<div class=\'panel panel-success\'><div class=\'panel-header\'><h3 class=\'panel-title\'>Datos Recibidos del Backend C</h3></div><div class=\'panel-body\'>Información procesada y lista para operar.</div></div>'">Mostrar Datos Reales</button>
+        </div>
+
+        <div id="demo-skeleton-box">
+            <!-- Inicia con la tarjeta en modo Skeleton -->
+            <div class="skeleton-card">
+                <div class="skeleton skeleton-text skeleton-text-title"></div>
+                <div class="skeleton skeleton-text"></div>
+                <div class="skeleton skeleton-text skeleton-text-short"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Entrada en Cascada (Staggered Entry) -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">2. Entrada Escalonada en Cascada (Staggered Entry)</h3>
+
+        <div class="stagger-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div class="panel panel-default glow-on-hover glow-info">
+                <div class="panel-body">Módulo 1 (CPU)</div>
+            </div>
+            <div class="panel panel-default glow-on-hover glow-success">
+                <div class="panel-body">Módulo 2 (RAM)</div>
+            </div>
+            <div class="panel panel-default glow-on-hover glow-warning">
+                <div class="panel-body">Módulo 3 (Disco)</div>
+            </div>
+            <div class="panel panel-default glow-on-hover glow-submit">
+                <div class="panel-body">Módulo 4 (Red)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Glow Contextual & Ripple -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">3. Resplandor Neón Contextual (Ambient Glow)</h3>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="panel panel-danger glow-on-hover glow-danger" style="margin: 0; width: 220px;">
+                <div class="panel-body">Peligro / Glow Rojo</div>
+            </div>
+            <div class="panel panel-success glow-on-hover glow-success" style="margin: 0; width: 220px;">
+                <div class="panel-body">Éxito / Glow Verde</div>
+            </div>
+            <div class="panel panel-submit glow-on-hover glow-submit" style="margin: 0; width: 220px;">
+                <div class="panel-body">Acción / Glow Azul</div>
+            </div>
+        </div>
+    </section>
+
+</div>

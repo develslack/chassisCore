@@ -1,0 +1,79 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Desplegable Simple Independiente (Submit / Azul) -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">Collapse Independiente</h3>
+
+        <button class="btn btn-submit" data-core-toggle="collapse" data-target="box-detalles">
+            <span>Mostrar u Ocultar Parámetros de Red</span>
+            <span class="collapse-icon">▲</span>
+        </button>
+
+        <div id="box-detalles" class="collapse-content" style="margin-top: 0.75rem;">
+            <div class="collapse-inner">
+                <div class="panel panel-submit" style="margin-bottom: 0;">
+                    <div class="panel-body">
+                        IP Local: 192.168.1.100<br>
+                        Máscara: 255.255.255.0<br>
+                        Puerto Backend C: 8080
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Acordeón Exclusivo (Cierra el anterior al abrir uno nuevo) -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">Acordeón de Preguntas Frecuentes / Secciones (Exclusivo)</h3>
+
+        <div id="acordeon-sistema" class="accordion">
+
+            <!-- Ítem 1: Info (Celeste) -->
+            <div class="collapse-card collapse-info">
+                <button class="collapse-header" data-core-toggle="collapse" data-target="acc-item-1" data-core-parent="acordeon-sistema">
+                    <span>1. Requisitos de Hardware del Servidor</span>
+                    <span class="collapse-icon">▼</span>
+                </button>
+                <div id="acc-item-1" class="collapse-content">
+                    <div class="collapse-inner">
+                        <div class="collapse-body">
+                            El chasis está optimizado para funcionar en arquitecturas x86_64 con al menos 2 GB de RAM y sistema operativo GNU/Linux.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ítem 2: Success (Verde) -->
+            <div class="collapse-card collapse-success">
+                <button class="collapse-header" data-core-toggle="collapse" data-target="acc-item-2" data-core-parent="acordeon-sistema">
+                    <span>2. Motor de Base de Datos compatible</span>
+                    <span class="collapse-icon">▼</span>
+                </button>
+                <div id="acc-item-2" class="collapse-content">
+                    <div class="collapse-inner">
+                        <div class="collapse-body">
+                            Soporte nativo con instancias MariaDB / MySQL locales gestionadas mediante drivers C vanilla.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ítem 3: Warning (Mostaza) -->
+            <div class="collapse-card collapse-warning">
+                <button class="collapse-header" data-core-toggle="collapse" data-target="acc-item-3" data-core-parent="acordeon-sistema">
+                    <span>3. Políticas de Resguardo y Respaldos</span>
+                    <span class="collapse-icon">▼</span>
+                </button>
+                <div id="acc-item-3" class="collapse-content">
+                    <div class="collapse-inner">
+                        <div class="collapse-body">
+                            Los respaldos se generan en formato binario de forma diaria en la partición local asignada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>

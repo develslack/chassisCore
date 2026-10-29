@@ -1,0 +1,85 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Grupo de Pestañas Submit (Azul) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Pestañas de Configuración (Submit / Azul)</h3>
+
+        <ul class="nav-tabs nav-tabs-submit">
+            <li>
+                <button class="nav-tab-item active" data-core-toggle="tab" data-target="tab-general">
+                    <span class="icon icon-user icon-sm"></span> General
+                </button>
+            </li>
+            <li>
+                <button class="nav-tab-item" data-core-toggle="tab" data-target="tab-seguridad">
+                    <span class="icon icon-password icon-sm"></span> Seguridad
+                </button>
+            </li>
+            <li>
+                <button class="nav-tab-item" data-core-toggle="tab" data-target="tab-red">
+                    Red & Servidor
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="tab-general" class="tab-pane active">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Contenido del módulo General. Ajustes de perfil e idioma de la interfaz.
+                    </div>
+                </div>
+            </div>
+            <div id="tab-seguridad" class="tab-pane">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Parámetros de autenticación de dos factores (2FA) y cambio de contraseña.
+                    </div>
+                </div>
+            </div>
+            <div id="tab-red" class="tab-pane">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        Configuración de socket de red para la conexión directa con la API en C.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Grupo de Pestañas con Colores Individuales (Variantes Contextuales) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Pestañas con Acentos de Color Específicos</h3>
+
+        <ul class="nav-tabs">
+            <li>
+                <button class="nav-tab-item nav-tab-success active" data-core-toggle="tab" data-target="tab-servicios">
+                    Servicios (Success)
+                </button>
+            </li>
+            <li>
+                <button class="nav-tab-item nav-tab-warning" data-core-toggle="tab" data-target="tab-alertas">
+                    Alertas (Warning)
+                </button>
+            </li>
+            <li>
+                <button class="nav-tab-item nav-tab-danger" data-core-toggle="tab" data-target="tab-errores">
+                    Logs de Error (Danger)
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="tab-servicios" class="tab-pane active">
+                <div class="alert alert-success">Todos los servicios operan con normalidad.</div>
+            </div>
+            <div id="tab-alertas" class="tab-pane">
+                <div class="alert alert-warning">2 advertencias no críticas pendientes de revisión.</div>
+            </div>
+            <div id="tab-errores" class="tab-pane">
+                <div class="alert alert-danger">No se registran excepciones en las últimas 24 horas.</div>
+            </div>
+        </div>
+    </section>
+
+</div>

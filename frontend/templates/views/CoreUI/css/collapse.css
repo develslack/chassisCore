@@ -1,0 +1,99 @@
+/* =================================================================
+   chassisCore - collapse.css (Design System: Desplegables & Acordeones)
+   ================================================================ */
+
+/* Contenedor del Acordeón / Grupo */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Tarjeta / Ficha Desplegable Individual */
+.collapse-card {
+    background-color: #121316;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.15s ease;
+}
+
+/* Encabezado / Disparador del Collapse */
+.collapse-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background-color: #121316;
+    color: #f3f4f6;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.collapse-header:hover {
+    background-color: #1a1b20;
+}
+
+/* Indicador Flecha / Ícono de Rotación */
+.collapse-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.25s ease;
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+/* Estado Abierto: Rotar flecha */
+.collapse-card.open .collapse-icon,
+.collapse-header.active .collapse-icon {
+    transform: rotate(180deg);
+    color: #ffffff;
+}
+
+/* --- Animación Suave de Despliegue con CSS Grid --- */
+.collapse-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    opacity: 0;
+}
+
+.collapse-content > .collapse-inner {
+    overflow: hidden;
+}
+
+/* Clase que activa el despliegue */
+.collapse-content.show {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.collapse-body {
+    padding: 1.25rem;
+    border-top: 1px solid #27272a;
+    font-size: 0.8125rem;
+    color: #9ca3af;
+    line-height: 1.5;
+    background-color: #0d0e11;
+}
+
+/* =================================================================
+   VARIANTES DE COLOR CONTEXTUALES (7 Colores)
+   ================================================================ */
+
+.collapse-default { border-left: 4px solid #3f3f46; }
+.collapse-success { border-left: 4px solid #16a34a; }
+.collapse-danger  { border-left: 4px solid #dc2626; }
+.collapse-info    { border-left: 4px solid #0ea5e9; }
+.collapse-warning { border-left: 4px solid #d97706; }
+.collapse-submit  { border-left: 4px solid #2563eb; }
+.collapse-legal   { border-left: 4px solid #18181b; }

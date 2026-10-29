@@ -1,0 +1,87 @@
+/* =================================================================
+   chassisCore - badges.css (Design System: Badges, Labels & Tags)
+   ================================================================ */
+
+/* --- Estilo Base de Label / Badge --- */
+.label, .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+/* Formato Píldora (Redondeado completo para contadores) */
+.badge-pill {
+    border-radius: 9999px;
+    padding: 0.2rem 0.55rem;
+}
+
+/* Formato Punto de Estado (Dot Badge) */
+.badge-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+/* --- Tamaños --- */
+.label-sm, .badge-sm {
+    font-size: 0.6875rem;
+    padding: 0.15rem 0.4rem;
+}
+
+.label-lg, .badge-lg {
+    font-size: 0.8125rem;
+    padding: 0.35rem 0.65rem;
+}
+
+/* =================================================================
+   VARIACIONES DE COLOR
+   ================================================================ */
+
+/* --- 1. Sólidos (Sólidos intensos) --- */
+.label-default, .badge-default { background-color: #27272a; border-color: #3f3f46; color: #f3f4f6; }
+.label-success, .badge-success { background-color: #15803d; border-color: #166534; color: #ffffff; }
+.label-danger,  .badge-danger  { background-color: #b91c1c; border-color: #991b1b; color: #ffffff; }
+.label-info,    .badge-info    { background-color: #0284c7; border-color: #0369a1; color: #ffffff; }
+.label-warning, .badge-warning { background-color: #b45309; border-color: #92400e; color: #ffffff; }
+.label-submit,  .badge-submit  { background-color: #1d4ed8; border-color: #1e40af; color: #ffffff; }
+.label-legal,   .badge-legal   { background-color: #09090b; border-color: #27272a; color: #d4d4d8; }
+
+/* --- 2. Soft / Tenues (Fondo con opacidad sutil para interfaces densas) --- */
+.label-soft-default { background-color: rgba(63, 63, 70, 0.2);  border-color: rgba(63, 63, 70, 0.4);  color: #d4d4d8; }
+.label-soft-success { background-color: rgba(22, 163, 74, 0.15); border-color: rgba(22, 163, 74, 0.3); color: #4ade80; }
+.label-soft-danger  { background-color: rgba(220, 38, 38, 0.15); border-color: rgba(220, 38, 38, 0.3); color: #f87171; }
+.label-soft-info    { background-color: rgba(14, 165, 233, 0.15); border-color: rgba(14, 165, 233, 0.3); color: #38bdf8; }
+.label-soft-warning { background-color: rgba(217, 119, 6, 0.15); border-color: rgba(217, 119, 6, 0.3); color: #fbbf24; }
+.label-soft-submit  { background-color: rgba(37, 99, 235, 0.15); border-color: rgba(37, 99, 235, 0.3); color: #60a5fa; }
+.label-soft-legal   { background-color: rgba(24, 24, 27, 0.6);   border-color: rgba(39, 39, 42, 0.8);  color: #a1a1aa; }
+
+/* --- 3. Outline (Solo Borde) --- */
+.label-outline-default { background: transparent; border-color: #3f3f46; color: #d4d4d8; }
+.label-outline-success { background: transparent; border-color: #16a34a; color: #4ade80; }
+.label-outline-danger  { background: transparent; border-color: #dc2626; color: #f87171; }
+.label-outline-info    { background: transparent; border-color: #0ea5e9; color: #38bdf8; }
+.label-outline-warning { background: transparent; border-color: #d97706; color: #fbbf24; }
+.label-outline-submit  { background: transparent; border-color: #2563eb; color: #60a5fa; }
+.label-outline-legal   { background: transparent; border-color: #27272a; color: #a1a1aa; }
+
+/* --- 4. Colores para Puntos de Estado (Dot Badges) --- */
+.badge-dot.badge-default { background-color: #71717a; }
+.badge-dot.badge-success { background-color: #22c55e; box-shadow: 0 0 6px rgba(34, 197, 94, 0.5); }
+.badge-dot.badge-danger  { background-color: #ef4444; box-shadow: 0 0 6px rgba(239, 68, 68, 0.5); }
+.badge-dot.badge-info    { background-color: #38bdf8; box-shadow: 0 0 6px rgba(56, 189, 248, 0.5); }
+.badge-dot.badge-warning { background-color: #f59e0b; box-shadow: 0 0 6px rgba(245, 158, 11, 0.5); }
+.badge-dot.badge-submit  { background-color: #3b82f6; box-shadow: 0 0 6px rgba(59, 130, 246, 0.5); }
+.badge-dot.badge-legal   { background-color: #3f3f46; }

@@ -1,0 +1,107 @@
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+
+    <!-- Columna 1: Campos de Texto, Select & File -->
+    <div class="panel panel-default">
+        <div class="panel-header">
+            <h3 class="panel-title">Controles Principales</h3>
+        </div>
+        <div class="panel-body">
+
+            <!-- Input Texto Estándar -->
+            <div class="form-group">
+                <label class="form-label form-label-required" for="input-nombre">Nombre de Usuario</label>
+                <input type="text" id="input-nombre" class="form-control" placeholder="Ej: admin_sys">
+                <span class="form-text">Nombre único para autenticación en el sistema.</span>
+            </div>
+
+            <!-- Select Personalizado -->
+            <div class="form-group">
+                <label class="form-label" for="select-rol">Rol de Acceso</label>
+                <select id="select-rol" class="form-select">
+                    <option value="" disabled selected>Seleccione un rol...</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Operador</option>
+                    <option value="3">Auditor</option>
+                </select>
+            </div>
+
+            <!-- Input File Personalizado -->
+            <div class="form-group">
+                <label class="form-label">Cargar Certificado (.crt)</label>
+                <div class="form-file">
+                    <input type="file" class="form-file-input" id="file-cert">
+                    <div class="form-file-label">
+                        <span class="form-file-name" data-default="Seleccionar certificado...">Seleccionar certificado...</span>
+                        <span class="form-file-btn">Buscar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="form-label" for="txt-observaciones">Observaciones</label>
+                <textarea id="txt-observaciones" class="form-control" placeholder="Ingrese comentarios adicionales..."></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Columna 2: Checkboxes, Radios & Variantes de Color -->
+    <div class="panel panel-default">
+        <div class="panel-header">
+            <h3 class="panel-title">Checkboxes, Radios y Validaciones</h3>
+        </div>
+        <div class="panel-body">
+
+            <!-- Checkboxes con Variantes de Color -->
+            <div class="form-group">
+                <label class="form-label" style="margin-bottom: 0.5rem;">Opciones (Checkboxes)</label>
+
+                <label class="form-check form-check-submit">
+                    <input type="checkbox" class="form-check-input" checked>
+                    <span class="form-check-label">Notificaciones por Correo (Submit/Azul)</span>
+                </label>
+
+                <label class="form-check form-check-success">
+                    <input type="checkbox" class="form-check-input" checked>
+                    <span class="form-check-label">Resguardo Automático (Success/Verde)</span>
+                </label>
+
+                <label class="form-check form-check-danger">
+                    <input type="checkbox" class="form-check-input">
+                    <span class="form-check-label">Modo Depuración (Danger/Rojo)</span>
+                </label>
+            </div>
+
+            <!-- Radios de Selección Única -->
+            <div class="form-group" style="margin-top: 1.25rem;">
+                <label class="form-label" style="margin-bottom: 0.5rem;">Entorno de Ejecución (Radios)</label>
+
+                <label class="form-check form-check-info">
+                    <input type="radio" name="env-type" class="form-check-input" checked>
+                    <span class="form-check-label">Servidor Local (On-Premise)</span>
+                </label>
+
+                <label class="form-check form-check-info">
+                    <input type="radio" name="env-type" class="form-check-input">
+                    <span class="form-check-label">Entorno Estándar</span>
+                </label>
+            </div>
+
+            <!-- Estados de Validación / Colores Contextuales -->
+            <div class="form-group" style="margin-top: 1.25rem;">
+                <label class="form-label">Estado Validación Success</label>
+                <input type="text" class="form-control form-control-success" value="clave_valida_2026">
+                <span class="form-text" style="color: #4ade80;">La clave cumple con los requisitos de seguridad.</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Estado Validación Danger</label>
+                <input type="text" class="form-control form-control-danger" value="usuario_invalido@">
+                <span class="form-text" style="color: #f87171;">Formato de correo no válido.</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>

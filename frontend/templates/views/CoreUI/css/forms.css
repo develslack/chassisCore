@@ -1,0 +1,104 @@
+/* views/CoreUI/css/forms.css */
+
+.auth-body {
+    /* Quitamos el flex del body para que no colapse la barra superior */
+    display: block;
+    background-color: var(--bg-primary, #0a0a0c);
+    color: var(--text-main, #f3f4f6);
+    min-height: 100vh;
+    padding-top: 40px; /* Le dejamos el espacio exacto de la barra GNOME */
+}
+
+/* Pasamos el flex a este wrapper central */
+.auth-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 40px);
+    padding: 1rem;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--bg-secondary, #121316);
+    border: 1px solid var(--border-color, #27272a);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.auth-header { text-align: center; margin-bottom: 1.5rem; }
+.auth-header h1 { font-size: 1.25rem; font-weight: 600; }
+.auth-header p { font-size: 0.8125rem; color: #9ca3af; margin-top: 0.25rem; }
+.form-group { margin-bottom: 1rem; }
+.form-label { display: block; font-size: 0.8125rem; margin-bottom: 0.35rem; }
+.form-control { width: 100%; padding: 0.65rem; background-color: #0a0a0c; border: 1px solid #27272a; border-radius: 8px; color: #f3f4f6; }
+.form-control:focus { outline: none; border-color: #3b82f6; }
+.btn { display: block; width: 100%; padding: 0.65rem; background-color: #3b82f6; color: white; border: none; border-radius: 8px; cursor: pointer; margin-top: 1rem; }
+.text-link { display: block; text-align: center; margin-top: 1rem; font-size: 0.8125rem; color: #9ca3af; text-decoration: none; }
+
+/* Contenedor relativo para inputs con botón interno */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group .form-control {
+    padding-right: 2.5rem; /* Espacio para que el texto no se solape con el ícono */
+}
+
+.btn-toggle-password {
+    position: absolute;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted, #9ca3af);
+    cursor: pointer;
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color var(--transition, 0.15s ease);
+}
+
+.btn-toggle-password:hover,
+.btn-toggle-password.active {
+    color: var(--text-main, #f3f4f6);
+}
+
+
+/* Contenedor wrapper para inputs con botón incrustado */
+.input-embedded {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Espaciado interno para que el texto de la clave no tape el ojo */
+.input-embedded .form-control {
+    padding-right: 2.5rem;
+}
+
+/* Botón incrustado en el margen derecho interior */
+.btn-input-action {
+    position: absolute;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted, #9ca3af);
+    border-radius: 4px;
+    transition: color var(--transition, 0.15s ease);
+}
+
+.btn-input-action:hover {
+    color: var(--text-main, #f3f4f6);
+}

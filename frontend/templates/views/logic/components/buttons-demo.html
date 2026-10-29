@@ -1,0 +1,88 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Muestrario de Colores (Tamaño Medium por defecto) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.9rem; color: #9ca3af;">Variantes de Color</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
+            <button class="btn btn-default">Plateado</button>
+            <button class="btn btn-success">Guardar</button>
+            <button class="btn btn-danger">Eliminar</button>
+            <button class="btn btn-info">Detalles</button>
+            <button class="btn btn-warning">Advertencia</button>
+            <button class="btn btn-submit">Ingresar</button>
+            <button class="btn btn-legal">Términos Legales</button>
+        </div>
+    </section>
+
+    <!-- 2. Muestrario de Tamaños -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.9rem; color: #9ca3af;">Tamaños (sm, md, lg)</h3>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button class="btn btn-submit btn-sm">Pequeño (sm)</button>
+            <button class="btn btn-submit btn-md">Mediano (md)</button>
+            <button class="btn btn-submit btn-lg">Grande (lg)</button>
+        </div>
+    </section>
+
+    <!-- 3. Botones con Íconos Incrustados -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.9rem; color: #9ca3af;">Con Íconos PNG</h3>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button class="btn btn-success">
+                <span class="icon icon-registro icon-sm"></span>
+                <span>Nuevo Registro</span>
+            </button>
+            <button class="btn btn-danger btn-sm">
+                <span class="icon icon-password icon-sm"></span>
+                <span>Resetear</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- 4. Botones Dropdown (Desplegables) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.9rem; color: #9ca3af;">Botones Dropdown</h3>
+        <div style="display: flex; gap: 1rem;">
+
+            <!-- Dropdown Default -->
+            <div class="btn-dropdown-container">
+                <button class="btn btn-default">
+                    <span>Opciones</span>
+                    <span class="icon icon-password icon-sm"></span>
+                </button>
+                <div class="btn-dropdown-menu">
+                    <a href="#" class="btn-dropdown-item">Editar perfil</a>
+                    <a href="#" class="btn-dropdown-item">Configuración</a>
+                    <hr style="border: 0; border-top: 1px solid #27272a; margin: 0.25rem 0;">
+                    <a href="#" class="btn-dropdown-item" style="color: #ef4444;">Cerrar Sesión</a>
+                </div>
+            </div>
+
+            <!-- Dropdown Submit -->
+            <div class="btn-dropdown-container">
+                <button class="btn btn-submit btn-sm">
+                    <span>Acciones Rápidas</span>
+                    <span class="icon icon-login icon-sm"></span>
+                </button>
+                <div class="btn-dropdown-menu">
+                    <button class="btn-dropdown-item">Exportar PDF</button>
+                    <button class="btn-dropdown-item">Exportar CSV</button>
+                </div>
+            </div>
+
+            <!-- En un formulario de login o modal -->
+            <button type="submit" class="btn btn-submit btn-lg btn-block">
+                <span class="icon icon-login icon-sm"></span>
+                <span>Ingresar al Sistema</span>
+            </button>
+
+            <!-- En una tarjeta de acción peligrosa -->
+            <button type="button" class="btn btn-danger btn-block">
+                <span class="icon icon-password icon-sm"></span>
+                <span>Eliminar Cuenta Definitivamente</span>
+            </button>
+
+        </div>
+    </section>
+
+</div>

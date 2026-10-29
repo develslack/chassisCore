@@ -1,0 +1,86 @@
+<div class="panel panel-default">
+    <div class="panel-header">
+        <h3 class="panel-title">
+            <span class="icon icon-user icon-sm"></span> Registros de Usuarios del Sistema
+        </h3>
+    </div>
+    <div class="panel-body" style="padding: 0;">
+
+        <div class="table-container" style="border: none; box-shadow: none;">
+
+            <!-- Atributos declarativos para DataTables -->
+            <table id="tabla-usuarios" class="table table-striped table-hover" data-core-table data-page-size="5" data-filename="reporte_usuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Correo Electrónico</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th class="no-sort">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>admin_main</td>
+                        <td>admin@chassiscore.local</td>
+                        <td>Administrador</td>
+                        <td><span class="label label-soft-success">Activo</span></td>
+                        <td><button class="btn btn-default btn-sm" type="button">Editar</button></td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td>002</td>
+                        <td>op_mantenimiento</td>
+                        <td>operaciones@chassiscore.local</td>
+                        <td>Operador</td>
+                        <td><span class="label label-soft-warning">Pendiente</span></td>
+                        <td><button class="btn btn-default btn-sm" type="button">Editar</button></td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>003</td>
+                        <td>auditor_ext</td>
+                        <td>auditoria@externa.com</td>
+                        <td>Auditor</td>
+                        <td><span class="label label-soft-danger">Inactivo</span></td>
+                        <td><button class="btn btn-default btn-sm" type="button">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>dev_backend</td>
+                        <td>c_developer@chassiscore.local</td>
+                        <td>Desarrollador</td>
+                        <td><span class="label label-soft-success">Activo</span></td>
+                        <td><button class="btn btn-default btn-sm" type="button">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>005</td>
+                        <td>user_test</td>
+                        <td>test@chassiscore.local</td>
+                        <td>Operador</td>
+                        <td><span class="label label-soft-success">Activo</span></td>
+                        <td><button class="btn btn-default btn-sm" type="button">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>sys_backup</td>
+                        <td>backup@chassiscore.local</td>
+                        <td>Sistema</td>
+                        <td><span class="label label-soft-info">En Proceso</span></td>
+                        <td><button class="btn btn-default btn-sm" type="button">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>007</td>
+                        <td>operator_02</td>
+                        <td>op2@chassiscore.local</td>
+                        <td>Operador</td>
+                        <td><span class="label label-soft-success">Activo</span></td>
+                        <td><button class="btn btn-default btn-sm" type="button">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>

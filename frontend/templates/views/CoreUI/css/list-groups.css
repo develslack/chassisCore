@@ -1,0 +1,145 @@
+/* =================================================================
+   chassisCore - list-groups.css (Design System: Listas e Ítems)
+   ================================================================ */
+
+/* Contenedor Base */
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #27272a;
+    background-color: #121316;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ítem Individual */
+.list-group-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    color: #9ca3af;
+    background-color: #121316;
+    border-bottom: 1px solid #27272a;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    box-sizing: border-box;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Ítem Accionable / Clicleable */
+.list-group-item-action {
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.list-group-item-action:hover {
+    background-color: #1a1b20;
+    color: #f3f4f6;
+}
+
+/* Estado Activo */
+.list-group-item.active {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #2563eb;
+    border-color: #2563eb;
+    font-weight: 500;
+}
+
+/* Estado Deshabilitado */
+.list-group-item.disabled,
+.list-group-item:disabled {
+    color: #52525b;
+    pointer-events: none;
+    background-color: #090a0c;
+}
+
+/* Variación Flush (Sin bordes externos ni radio, ideal para meter dentro de paneles) */
+.list-group-flush {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.list-group-flush .list-group-item {
+    border-right: none;
+    border-left: none;
+}
+
+.list-group-flush .list-group-item:first-child {
+    border-top: none;
+}
+
+/* =================================================================
+   VARIANTES DE COLOR CONTEXTUALES (7 Colores)
+   ================================================================ */
+
+/* 1. Default (Plateado) */
+.list-group-item-default {
+    border-left: 4px solid #3f3f46;
+    background-color: rgba(63, 63, 70, 0.08);
+    color: #f3f4f6;
+}
+
+/* 2. Success (Verde) */
+.list-group-item-success {
+    border-left: 4px solid #16a34a;
+    background-color: rgba(22, 163, 74, 0.08);
+    color: #4ade80;
+}
+
+/* 3. Danger (Rojo) */
+.list-group-item-danger {
+    border-left: 4px solid #dc2626;
+    background-color: rgba(220, 38, 38, 0.08);
+    color: #f87171;
+}
+
+/* 4. Info (Celeste) */
+.list-group-item-info {
+    border-left: 4px solid #0ea5e9;
+    background-color: rgba(14, 165, 233, 0.08);
+    color: #38bdf8;
+}
+
+/* 5. Warning (Amarillo Mostaza) */
+.list-group-item-warning {
+    border-left: 4px solid #d97706;
+    background-color: rgba(217, 119, 6, 0.08);
+    color: #fbbf24;
+}
+
+/* 6. Submit (Azul) */
+.list-group-item-submit {
+    border-left: 4px solid #2563eb;
+    background-color: rgba(37, 99, 235, 0.08);
+    color: #60a5fa;
+}
+
+/* 7. Legal (Negro) */
+.list-group-item-legal {
+    border-left: 4px solid #18181b;
+    background-color: rgba(24, 24, 27, 0.4);
+    color: #a1a1aa;
+}
+
+/* Aclarado al pasar el mouse sobre ítems de color accionables */
+.list-group-item-action.list-group-item-default:hover { background-color: rgba(63, 63, 70, 0.18); }
+.list-group-item-action.list-group-item-success:hover { background-color: rgba(22, 163, 74, 0.18); }
+.list-group-item-action.list-group-item-danger:hover  { background-color: rgba(220, 38, 38, 0.18); }
+.list-group-item-action.list-group-item-info:hover    { background-color: rgba(14, 165, 233, 0.18); }
+.list-group-item-action.list-group-item-warning:hover { background-color: rgba(217, 119, 6, 0.18); }
+.list-group-item-action.list-group-item-submit:hover  { background-color: rgba(37, 99, 235, 0.18); }
+.list-group-item-action.list-group-item-legal:hover   { background-color: rgba(24, 24, 27, 0.7); }

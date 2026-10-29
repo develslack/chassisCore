@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chassisCore - Acceso</title>
+    <!-- Los estilos vuelven a estar centralizados en sus archivos -->
+    <link rel="stylesheet" href="views/CoreUI/css/core.css">
+    <link rel="stylesheet" href="views/CoreUI/css/navbar-index.css">
+    <link rel="stylesheet" href="views/CoreUI/css/forms.css">
+    <link rel="stylesheet" href="views/CoreUI/css/icons-basic.css">
+    <link rel="stylesheet" href="views/CoreUI/css/buttons.css">
+
+</head>
+<body class="auth-body">
+
+    <!-- Barra GNOME fija y hardcodeada -->
+    <header class="gnome-topbar">
+        <div class="gnome-topbar-left">
+            <span class="system-brand">chassisCore <span class="sys-version">v1.0</span></span>
+        </div>
+
+        <div class="gnome-topbar-center">
+            <span class="system-status">Sistemas en Línea</span>
+        </div>
+
+        <div class="gnome-topbar-right">
+            <!-- Estructura restaurada para el Menú Desplegable con Hover -->
+            <div class="gnome-menu-dropdown">
+                <button class="gnome-menu-trigger">
+                    <span class="icon icon-accesories-preferences-system-login icon-lg"></span>
+                    <span>Sesión</span>
+                    <!-- Icono de flecha hacia abajo -->
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="gnome-dropdown-content">
+                    <a href="/login" data-route="login" class="gnome-dropdown-item">
+                        <span class="icon icon-status-dialog-password icon-lg"></span>
+                        <span>Login</span>
+                    </a>
+                    <a href="/registro" data-route="registro" class="gnome-dropdown-item">
+                        <span class="icon icon-actions-list-add-user icon-lg"></span>
+                        <span>Registro</span>
+                    </a>
+                    <a href="/recupero" data-route="recupero" class="gnome-dropdown-item">
+                        <span class="icon icon-accesories-preferences-desktop-user-password icon-lg"></span>
+                        <span>Password</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor central (Aquí adentro el CoreUI inyecta el formulario) -->
+    <div class="auth-wrapper">
+        <main id="app-view">
+            <!-- El core inyectará el login aquí -->
+        </main>
+    </div>
+
+    <script src="views/CoreUI/js/libcore.js"></script>
+    <script src="views/CoreUI/js/handler.js"></script>
+    <script src="views/logic/app/logic.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            CoreUI.init({
+                viewContainerId: 'app-view',
+                viewsFolder: 'views/logic/components/',
+                defaultView: 'login',
+                baseRoute: '/'
+            }, AppLogic);
+        });
+    </script>
+</body>
+</html>

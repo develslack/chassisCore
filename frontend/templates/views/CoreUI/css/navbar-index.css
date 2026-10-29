@@ -1,0 +1,116 @@
+/* views/CoreUI/css/navbar-index.css */
+
+.gnome-topbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    height: 40px !important;
+    background-color: #121316 !important; /* Superficie oscura sólida */
+    border-bottom: 1px solid #27272a !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 1.25rem !important;
+    z-index: 999999 !important; /* Forzar nivel máximo */
+    font-size: 0.8125rem;
+    color: #f3f4f6;
+    box-sizing: border-box;
+}
+
+.gnome-topbar-left,
+.gnome-topbar-center,
+.gnome-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.system-brand {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #f3f4f6;
+}
+
+.sys-version {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    background-color: #1a1b20;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    margin-left: 0.25rem;
+}
+
+.system-status {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+/* Menú Desplegable (Hover) */
+.gnome-menu-dropdown {
+    position: relative;
+}
+
+.gnome-menu-trigger {
+    background: #1a1b20;
+    border: 1px solid #27272a;
+    color: #f3f4f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+}
+
+.gnome-menu-trigger:hover {
+    background-color: #27272a;
+}
+
+.gnome-dropdown-content {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    width: 150px;
+    background-color: #121316;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 0.35rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.2s ease-in-out;
+}
+
+.gnome-menu-dropdown:hover .gnome-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.gnome-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    color: #9ca3af;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    transition: all var(--transition);
+}
+
+.gnome-dropdown-item:hover {
+    background-color: #1a1b20;
+    color: #f3f4f6; /* Al pasar el mouse, el ícono heredará automáticamente este blanco brillante */
+}}
+
+.gnome-dropdown-item:hover {
+    background-color: #1a1b20;
+    color: #f3f4f6;
+}

@@ -1,0 +1,129 @@
+/* =================================================================
+   chassisCore - progress.css (Estilos Windows XP & Ubuntu 8.04)
+   ================================================================ */
+
+/* Contenedor Base de la Barra */
+.progress {
+    width: 100%;
+    background-color: #0a0a0c;
+    border: 1px solid #27272a;
+    border-radius: 6px;
+    padding: 2px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1.25rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* =================================================================
+   1. ESTILO WINDOWS XP (Bloques segmentados tipo caramelos)
+   ================================================================ */
+.progress-xp {
+    height: 22px;
+    border-radius: 4px;
+    background-color: #090a0c;
+    border: 1px solid #3f3f46;
+}
+
+.progress-xp .progress-bar {
+    border-radius: 2px;
+    /* Trama de bloques: 8px de bloque + 2px de separación oscura + Brillo glossy vertical */
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 8px,
+            #090a0c 8px,
+            #090a0c 10px
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.45) 0%,
+            rgba(255, 255, 255, 0.1) 45%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+}
+
+/* Animación de carga continua estilo Windows XP (Marquee) */
+.progress-xp.progress-indeterminate .progress-bar {
+    width: 30% !important;
+    animation: xpMarquee 4.5s infinite linear;
+}
+
+@keyframes xpMarquee {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
+}
+
+
+/* =================================================================
+   2. ESTILO UBUNTU 8.04 HARDY HERON (Glossy con franjas diagonales)
+   ================================================================ */
+.progress-ubuntu {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #121316;
+    border: 1px solid #27272a;
+    padding: 1px;
+}
+
+.progress-ubuntu .progress-bar {
+    border-radius: 8px;
+    /* Efecto cristal / gelatina con franjas diagonales suaves */
+    background-image:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.18) 10px,
+            transparent 10px,
+            transparent 20px
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(0, 0, 0, 0.15) 51%,
+            rgba(0, 0, 0, 0.35) 100%
+        );
+    background-size: 40px 40px, 100% 100%;
+}
+
+/* Franjas animadas estilo Ubuntu */
+.progress-ubuntu.progress-animated .progress-bar {
+    animation: ubuntuStripes 1s linear infinite;
+}
+
+@keyframes ubuntuStripes {
+    0%   { background-position: 0 0, 0 0; }
+    100% { background-position: 40px 0, 0 0; }
+}
+
+
+/* =================================================================
+   PALETA DE COLORES (Aplica a ambos estilos)
+   ================================================================ */
+.progress-default .progress-bar { background-color: #52525b; }
+.progress-success .progress-bar { background-color: #16a34a; }
+.progress-danger  .progress-bar { background-color: #dc2626; }
+.progress-info    .progress-bar { background-color: #0ea5e9; }
+.progress-warning .progress-bar { background-color: #d97706; }
+.progress-submit  .progress-bar { background-color: #2563eb; }
+.progress-legal   .progress-bar { background-color: #18181b; }

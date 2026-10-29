@@ -1,0 +1,26 @@
+<!-- Barra Superior Estilo GNOME Desktop -->
+<header class="gnome-topbar">
+    <div class="gnome-topbar-left">
+        <span class="system-brand">chassisCore <span class="sys-version">v1.0</span></span>
+    </div>
+
+    <div class="gnome-topbar-center">
+        <!-- Indicador central o reloj minimalista opcional -->
+        <span class="system-status">Sistemas en Línea</span>
+    </div>
+
+    <div class="gnome-topbar-right">
+        <!-- Menú de Acceso / Acciones -->
+        <div class="gnome-menu-dropdown">
+            <button class="gnome-menu-trigger">
+                <span>Sesión</span>
+                <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="gnome-dropdown-content">
+                <a href="/login" data-route="login" class="gnome-dropdown-item"><span class="icon icon-login icon-sm"></span><span>Login</span></a>
+                <a href="/registro" data-route="registro" class="gnome-dropdown-item">Registro</a>
+                <a href="/recupero" data-route="recupero" class="gnome-dropdown-item">Password</a>
+            </div>
+        </div>
+    </div>
+</header>

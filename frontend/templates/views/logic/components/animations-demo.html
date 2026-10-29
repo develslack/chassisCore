@@ -1,0 +1,47 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Demostración de Transiciones de Entrada y Salida -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Efectos de Transición (Fade, Slide, Zoom)</h3>
+
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+            <button class="btn btn-submit btn-sm" onclick="LibCore.showElement('caja-animada', 'fade-in')">Fade In</button>
+            <button class="btn btn-submit btn-sm" onclick="LibCore.showElement('caja-animada', 'slide-down')">Slide Down</button>
+            <button class="btn btn-submit btn-sm" onclick="LibCore.showElement('caja-animada', 'zoom-in')">Zoom In</button>
+            <button class="btn btn-default btn-sm" onclick="LibCore.hideElement('caja-animada', 'fade-out')">Ocultar (Fade Out)</button>
+        </div>
+
+        <div id="caja-animada" class="panel panel-submit">
+            <div class="panel-header">
+                <h3 class="panel-title">Elemento Animado Dinámicamente</h3>
+            </div>
+            <div class="panel-body">
+                Este panel responde a las funciones <code>LibCore.showElement()</code> y <code>LibCore.hideElement()</code> utilizando clases ligeras aceleradas por GPU.
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Efectos de Atención y Feedback Visual (Shake & Pulse) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Efectos de Feedback y Enfoque (Pulse & Shake)</h3>
+
+        <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+
+            <!-- Elemento con Pulso Constante -->
+            <div class="panel panel-success pulse" style="margin: 0; max-width: 300px;">
+                <div class="panel-body" style="padding: 0.85rem 1rem;">
+                    <span class="badge-dot badge-success"></span> Servidor en vivo (Pulse Activo)
+                </div>
+            </div>
+
+            <!-- Botón que vibra ante error -->
+            <div id="btn-error-container">
+                <button id="btn-shake" class="btn btn-danger" onclick="LibCore.shakeElement('btn-shake'); LibCore.toast('Credenciales incorrectas', 'danger', 'Error');">
+                    Simular Error (Shake)
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+</div>

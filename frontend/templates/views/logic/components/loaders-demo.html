@@ -1,0 +1,85 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Catálogo de Tipos de Relojes / Loaders -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Estilos de Indicadores</h3>
+        <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+
+            <!-- Rueda Giratoria -->
+            <div style="text-align: center;">
+                <div class="loader loader-spinner loader-submit loader-md"></div>
+                <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.5rem;">Rueda Giratoria</div>
+            </div>
+
+            <!-- Reloj Clásico con Manecillas -->
+            <div style="text-align: center;">
+                <div class="loader loader-clock loader-info loader-md"></div>
+                <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.5rem;">Reloj Clásico</div>
+            </div>
+
+            <!-- Reloj de Arena -->
+            <div style="text-align: center;">
+                <div class="loader loader-hourglass loader-warning loader-md"></div>
+                <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.5rem;">Reloj de Arena</div>
+            </div>
+
+            <!-- Puntos de Pulso -->
+            <div style="text-align: center;">
+                <div class="loader-dots loader-success">
+                    <span></span><span></span><span></span>
+                </div>
+                <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.5rem;">Puntos de Espera</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. Tamaños (sm, md, lg) -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Tamaños (sm, md, lg)</h3>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+            <div class="loader loader-clock loader-submit loader-sm"></div>
+            <div class="loader loader-clock loader-submit loader-md"></div>
+            <div class="loader loader-clock loader-submit loader-lg"></div>
+        </div>
+    </section>
+
+    <!-- 3. Integración en Botones -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Uso en Botones en Estado de Carga</h3>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="btn btn-submit" disabled>
+                <span class="loader loader-spinner loader-sm" style="color: #ffffff;"></span>
+                <span>Procesando...</span>
+            </button>
+
+            <button class="btn btn-default" disabled>
+                <span class="loader loader-hourglass loader-warning loader-sm"></span>
+                <span>Sincronizando...</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- 4. Prueba Interactiva de Overlay sobre Panel -->
+    <section>
+        <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: #9ca3af;">Bloqueo de Panel por JS</h3>
+
+        <div id="panel-bloqueable" class="panel panel-default">
+            <div class="panel-header">
+                <h3 class="panel-title">Módulo de Transmisión de Datos</h3>
+            </div>
+            <div class="panel-body">
+                <p>Haga clic en los botones de abajo para simular una petición asíncrona hacia el servidor C.</p>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-submit btn-sm" onclick="LibCore.showLoader('panel-bloqueable', 'clock', 'info', 'Consultando socket C...'); setTimeout(() => LibCore.hideLoader('panel-bloqueable'), 3000);">
+                    Probar Reloj Clásico
+                </button>
+                <button class="btn btn-warning btn-sm" onclick="LibCore.showLoader('panel-bloqueable', 'hourglass', 'warning', 'Aguardando respuesta...'); setTimeout(() => LibCore.hideLoader('panel-bloqueable'), 3000);">
+                    Probar Reloj de Arena
+                </button>
+            </div>
+        </div>
+    </section>
+
+</div>

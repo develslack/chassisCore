@@ -1,0 +1,138 @@
+/* =================================================================
+   chassisCore - popovers.css (Design System: Popovers Flotantes)
+   ================================================================ */
+
+/* Contenedor relativo opcional para anclaje */
+.popover-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Caja del Popover */
+.popover {
+    position: absolute;
+    z-index: 10000;
+    min-width: 240px;
+    max-width: 320px;
+    background-color: #121316;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    box-sizing: border-box;
+}
+
+/* Estado Visibilidad */
+.popover.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =================================================================
+   POSICIONAMIENTO (Top, Bottom, Left, Right)
+   ================================================================ */
+
+/* --- Top (Arriba del elemento) --- */
+.popover-top {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+}
+.popover-top.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* --- Bottom (Abajo del elemento - Por defecto) --- */
+.popover-bottom {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+}
+.popover-bottom.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* --- Left (A la izquierda) --- */
+.popover-left {
+    right: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%) translateX(4px);
+}
+.popover-left.show {
+    transform: translateY(-50%) translateX(0);
+}
+
+/* --- Right (A la derecha) --- */
+.popover-right {
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-4px);
+}
+.popover-right.show {
+    transform: translateY(-50%) translateX(0);
+}
+
+/* =================================================================
+   ESTRUCTURA INTERNA
+   ================================================================ */
+
+.popover-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.9rem;
+    border-bottom: 1px solid #27272a;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #121316;
+}
+
+.popover-body {
+    padding: 0.85rem 0.9rem;
+    font-size: 0.8125rem;
+    color: #9ca3af;
+    line-height: 1.45;
+}
+
+.popover-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.6rem 0.9rem;
+    border-top: 1px solid #27272a;
+    background-color: #0a0a0c;
+}
+
+.btn-popover-close {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+}
+
+.btn-popover-close:hover {
+    color: #ffffff;
+}
+
+/* =================================================================
+   VARIANTES DE COLOR (7 Colores)
+   ================================================================ */
+
+.popover-default { border-top: 3px solid #3f3f46; }
+.popover-success { border-top: 3px solid #16a34a; }
+.popover-danger  { border-top: 3px solid #dc2626; }
+.popover-info    { border-top: 3px solid #0ea5e9; }
+.popover-warning { border-top: 3px solid #d97706; }
+.popover-submit  { border-top: 3px solid #2563eb; }
+.popover-legal   { border-top: 3px solid #18181b; }

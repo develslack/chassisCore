@@ -1,0 +1,257 @@
+/* =================================================================
+   chassisCore - forms.css (Design System: Inputs, Selects, Checks & Files)
+   ================================================================ */
+
+/* Contenedor del Grupo de Formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1.15rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Etiquetas (Labels) */
+.form-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #e4e4e7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-label-required::after {
+    content: " *";
+    color: #dc2626;
+}
+
+/* Texto de Ayuda / Hint */
+.form-text {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 0.15rem;
+}
+
+/* --- Controls Base (Text, Password, Number, Email, Select, Textarea) --- */
+.form-control,
+.form-select {
+    width: 100%;
+    height: 38px;
+    padding: 0.45rem 0.85rem;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    color: #f3f4f6;
+    background-color: #090a0c;
+    border: 1px solid #27272a;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.form-control::placeholder {
+    color: #52525b;
+}
+
+/* Hover y Focus Generales */
+.form-control:hover:not(:disabled),
+.form-select:hover:not(:disabled) {
+    border-color: #3f3f46;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    background-color: #0d0e11;
+}
+
+/* Estado Deshabilitado / Solo Lectura */
+.form-control:disabled,
+.form-select:disabled,
+.form-control[readonly] {
+    background-color: #121316;
+    border-color: #1f1f23;
+    color: #52525b;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Area de Texto (Textarea) */
+textarea.form-control {
+    height: auto;
+    min-height: 80px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Select Personalizado con Flecha SVG */
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%209ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    cursor: pointer;
+}
+
+.form-select option {
+    background-color: #121316;
+    color: #f3f4f6;
+    padding: 0.5rem;
+}
+
+/* --- Checkbox & Radio Buttons Personalizados --- */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: #090a0c;
+    border: 1px solid #27272a;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.form-check-input[type="radio"] {
+    border-radius: 50%;
+}
+
+.form-check-input::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transition: transform 0.15s ease-in-out;
+    background-color: #ffffff;
+}
+
+.form-check-input[type="checkbox"]::before {
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.form-check-input[type="radio"]::before {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.form-check-input:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.form-check-input:checked::before {
+    transform: scale(1);
+}
+
+.form-check-label {
+    font-size: 0.8125rem;
+    color: #d4d4d8;
+    cursor: pointer;
+}
+
+/* --- Selector de Archivos (File Input) --- */
+.form-file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.form-file-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 38px;
+    padding: 0.45rem 0.85rem;
+    background-color: #090a0c;
+    border: 1px solid #27272a;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    color: #9ca3af;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.form-file-btn {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    background-color: #27272a;
+    border: 1px solid #3f3f46;
+    color: #f3f4f6;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.form-file-input:hover + .form-file-label {
+    border-color: #3f3f46;
+    background-color: #0d0e11;
+}
+
+.form-file-input:focus + .form-file-label {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* =================================================================
+   VARIANTES DE COLOR Y VALIDACIÓN (7 Colores)
+   ================================================================ */
+
+/* 1. Default (Plateado) */
+.form-control-default, .form-control-default:focus { border-color: #3f3f46; box-shadow: 0 0 0 3px rgba(63, 63, 70, 0.25); }
+.form-check-default .form-check-input:checked { background-color: #52525b; border-color: #52525b; }
+
+/* 2. Success (Verde) */
+.form-control-success, .form-control-success:focus { border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25); }
+.form-check-success .form-check-input:checked { background-color: #16a34a; border-color: #16a34a; }
+
+/* 3. Danger (Rojo) */
+.form-control-danger, .form-control-danger:focus { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25); }
+.form-check-danger .form-check-input:checked { background-color: #dc2626; border-color: #dc2626; }
+
+/* 4. Info (Celeste) */
+.form-control-info, .form-control-info:focus { border-color: #0ea5e9; box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25); }
+.form-check-info .form-check-input:checked { background-color: #0ea5e9; border-color: #0ea5e9; }
+
+/* 5. Warning (Amarillo Mostaza) */
+.form-control-warning, .form-control-warning:focus { border-color: #d97706; box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25); }
+.form-check-warning .form-check-input:checked { background-color: #d97706; border-color: #d97706; }
+
+/* 6. Submit (Azul) */
+.form-control-submit, .form-control-submit:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25); }
+.form-check-submit .form-check-input:checked { background-color: #2563eb; border-color: #2563eb; }
+
+/* 7. Legal (Negro) */
+.form-control-legal, .form-control-legal:focus { border-color: #18181b; box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.5); }
+.form-check-legal .form-check-input:checked { background-color: #18181b; border-color: #27272a; }

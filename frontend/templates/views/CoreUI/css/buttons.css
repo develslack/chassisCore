@@ -1,0 +1,200 @@
+/* =================================================================
+   chassisCore - buttons.css (Design System: Botones & Dropdowns)
+   ================================================================ */
+
+/* --- Estilo Base --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.25;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    outline: none;
+}
+
+.btn:focus-visible {
+    box-shadow: 0 0 0 2px #0a0a0c, 0 0 0 4px #3b82f6;
+}
+
+.btn:disabled, .btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* --- Tamaños --- */
+.btn-sm {
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    height: 28px;
+}
+
+.btn-md, .btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8125rem;
+    height: 36px;
+}
+
+.btn-lg {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9375rem;
+    height: 44px;
+}
+
+/* --- Variantes de Color & Hover (Aclarado al pasar el mouse) --- */
+
+/* 1. Default (Plateado) */
+.btn-default {
+    background-color: #27272a;
+    border-color: #3f3f46;
+    color: #f3f4f6;
+}
+.btn-default:hover {
+    background-color: #3f3f46;
+    border-color: #52525b;
+    color: #ffffff;
+}
+
+/* 2. Success (Verde) */
+.btn-success {
+    background-color: #15803d;
+    border-color: #166534;
+    color: #ffffff;
+}
+.btn-success:hover {
+    background-color: #16a34a;
+    border-color: #22c55e;
+}
+
+/* 3. Danger (Rojo) */
+.btn-danger {
+    background-color: #b91c1c;
+    border-color: #991b1b;
+    color: #ffffff;
+}
+.btn-danger:hover {
+    background-color: #dc2626;
+    border-color: #ef4444;
+}
+
+/* 4. Info (Celeste) */
+.btn-info {
+    background-color: #0284c7;
+    border-color: #0369a1;
+    color: #ffffff;
+}
+.btn-info:hover {
+    background-color: #0ea5e9;
+    border-color: #38bdf8;
+}
+
+/* 5. Warning (Amarillo Mostaza) */
+.btn-warning {
+    background-color: #b45309;
+    border-color: #92400e;
+    color: #ffffff;
+}
+.btn-warning:hover {
+    background-color: #d97706;
+    border-color: #f59e0b;
+}
+
+/* 6. Submit (Azul) */
+.btn-submit {
+    background-color: #1d4ed8;
+    border-color: #1e40af;
+    color: #ffffff;
+}
+.btn-submit:hover {
+    background-color: #2563eb;
+    border-color: #3b82f6;
+}
+
+/* 7. Legal (Negro) */
+.btn-legal {
+    background-color: #09090b;
+    border-color: #27272a;
+    color: #d4d4d8;
+}
+.btn-legal:hover {
+    background-color: #18181b;
+    border-color: #3f3f46;
+    color: #ffffff;
+}
+
+/* --- Botón Desplegable (Dropdown Button) --- */
+.btn-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 160px;
+    background-color: #121316;
+    border: 1px solid #27272a;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+    padding: 0.35rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+}
+
+/* Despliegue automático por hover o mediante clase .open */
+.btn-dropdown-container:hover .btn-dropdown-menu,
+.btn-dropdown-container.open .btn-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.8125rem;
+    border-radius: 4px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.btn-dropdown-item:hover {
+    background-color: #1a1b20;
+    color: #f3f4f6;
+}
+
+/* Alineación a la derecha si es necesario */
+.btn-dropdown-menu.menu-right {
+    left: auto;
+    right: 0;
+}
+
+/* --- Botón de Ancho Completo (Block Button) --- */
+.btn-block {
+    display: flex;
+    width: 100%;
+}

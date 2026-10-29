@@ -1,0 +1,83 @@
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <!-- 1. Lista Interactiva Básica (Navegación / SPA) -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">Lista Accionable e Interactiva</h3>
+        <div class="list-group">
+            <a href="#" data-route="inicio" class="list-group-item list-group-item-action active">
+                <span>Inicio / General</span>
+                <span class="badge badge-default badge-pill">Principal</span>
+            </a>
+            <a href="#" data-route="perfil" class="list-group-item list-group-item-action">
+                <span>Configuración de Usuario</span>
+                <span class="icon icon-user icon-sm"></span>
+            </a>
+            <a href="#" data-route="seguridad" class="list-group-item list-group-item-action">
+                <span>Seguridad y Claves</span>
+                <span class="icon icon-password icon-sm"></span>
+            </a>
+            <div class="list-group-item disabled">
+                <span>Módulo de Liquidación (Deshabilitado)</span>
+                <span class="label label-default label-sm">Próximamente</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Lista Tematizada por Colores Contextuales -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">Variantes Contextuales de Color</h3>
+        <div class="list-group">
+            <div class="list-group-item list-group-item-success">
+                <span>Servicio C / Backend iniciado en puerto 8080</span>
+                <span class="badge-dot badge-success"></span>
+            </div>
+            <div class="list-group-item list-group-item-info">
+                <span>3 actualizaciones de firmware disponibles</span>
+                <span class="label label-info label-sm">Info</span>
+            </div>
+            <div class="list-group-item list-group-item-warning">
+                <span>Espacio en swap al 78%</span>
+                <span class="label label-warning label-sm">Atención</span>
+            </div>
+            <div class="list-group-item list-group-item-danger">
+                <span>Fallo de sincronización con base de datos MariaDB</span>
+                <span class="label label-danger label-sm">Error</span>
+            </div>
+            <div class="list-group-item list-group-item-submit">
+                <span>Transacción #8492 enviada a cola de procesamiento</span>
+                <span class="label label-submit label-sm">Enviado</span>
+            </div>
+            <div class="list-group-item list-group-item-legal">
+                <span>Registro de auditoría legal exportado</span>
+                <span class="label label-legal label-sm">Audit</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Lista Enrasada (Flush) dentro de un Panel -->
+    <section>
+        <h3 style="margin-bottom: 0.75rem; font-size: 0.875rem; color: #9ca3af;">Integración dentro de Paneles (List Group Flush)</h3>
+        <div class="panel panel-default" style="margin-bottom: 0;">
+            <div class="panel-header">
+                <h3 class="panel-title">Notificaciones Recientes</h3>
+            </div>
+            <div class="list-group list-group-flush">
+                <button class="list-group-item list-group-item-action">
+                    <div>
+                        <strong style="color: #f3f4f6; display: block;">Resguardo Automático</strong>
+                        <span style="font-size: 0.75rem; color: #71717a;">Se completó el backup en /var/backups</span>
+                    </div>
+                    <span class="label label-soft-success label-sm">Hace 5m</span>
+                </button>
+                <button class="list-group-item list-group-item-action">
+                    <div>
+                        <strong style="color: #f3f4f6; display: block;">Acceso Detectado</strong>
+                        <span style="font-size: 0.75rem; color: #71717a;">Inicio de sesión desde IP 192.168.1.15</span>
+                    </div>
+                    <span class="label label-soft-info label-sm">Hace 20m</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+</div>
