@@ -114,7 +114,7 @@ El backend sigue un modelo modular dividido en dos capas bien definidas dentro d
 ### Componentes de Infraestructura (`src/system/`)
 
 * **`main.c`**: Coordina la inicialización. Ejecuta la verificación de hardware Fail-Fast (`system_verificar_y_mapear_hardware`), instala los manejadores de señales Unix (`system_blindar_senales`), arranca el administrador de sesiones (`session_manager_init`), inicializa el motor de base de datos (`db_init`), registra las rutas del negocio y enciende los sockets HTTP.
-* **`db.h` / `db.c` (Blackbox DAO)**: Administra el pool/conexión MariaDB (`MYSQL*`). Ejecuta las llamadas a procedimientos almacenados (`db_call_sp`) con sanidad contra inyección SQL. Mapea las respuestas de la base de datos hacia la estructura neutra `DB_DataSet`, aislando la librería de MySQL de la lógica de aplicación.
+* **`db.h` / `db.c` (Blackbox DAO)**: Administra la conexión MariaDB/MySQL. Ejecuta las llamadas a procedimientos almacenados (`db_call_sp`) con sanidad contra inyección SQL. Mapea las respuestas de la base de datos hacia la estructura neutra `DB_DataSet`, aislando la librería de MySQL de la lógica de aplicación.
 * **`env_loader.h` / `env_loader.c`**: Parsea el archivo `backend/config/.env` para cargar host, puerto, usuario, clave, nombre de BD y prefijo dinámico sin requerir recompilación.
 * **`db_catalog.h` / `db_catalog.c`**: Carga el catálogo `backend/queries/sp_catalog.conf`. Mapea identificadores lógicos (ej: `SP_USER_LOGIN`) hacia los nombres de procedimientos almacenados reales (ej: `sp_users_login`).
 * **`db_schemas.h` / `db_schemas.c`**: Ejecuta la introspección de esquema consultando `INFORMATION_SCHEMA.TABLES`. Extrae y remueve el prefijo configurado para mapear nombres lógicos de tabla en memoria.
@@ -125,64 +125,11 @@ El backend sigue un modelo modular dividido en dos capas bien definidas dentro d
 * **`ArrayList.h` / `ArrayList.c`**: Estructura de lista dinámica basada en punteros genéricos `void*` utilizada para la gestión de cachés en RAM.
 * **`theme_handler.h` / `theme_handler.c`**: Manejador del sistema que atiende los endpoints `/theme/get` y `/theme/set`, persistiendo la preferencia visual por usuario en `frontend/theme_config/[usuario]-theme.conf`.
 * **`hash.h` / `hash.c`**: Genera hashes criptográficos SHA-256 para la autenticación de usuarios.
-* **`commonlib.h` / `commonlib.c`**: Librería auxiliar con funciones de utilidad (ej: `url_decode`, sanitización de strings).
-* **`system_struct.h` / `system_struct.c`**: Auditoría de hardware y blindaje de señales Unix.
-* **`auth.h` / `auth.c`**, **`users.h` / `users.c`**, **`open_docs.h` / `open_docs.c`**: Utilidades del sistema para autenticación, gestión de cuentas y manejo de documentación.
 
 ### Componentes de Lógica de Negocio (`src/bussiness/`)
 
 * **`users_service.h` / `users_service.c`**: Procesa la lógica de autenticación, registro, recuperación de clave y roles. Invoca la persistencia mediante `db_call_sp` utilizando únicamente claves del catálogo (`SP_USER_LOGIN`, `SP_REGISTER_USER`, etc.) y registra sesiones activas en la RAM del sistema.
 * **`roles_service.h` / `roles_service.c`**: Administra la entidad de roles mediante una estrategia de sincronización dual: carga los registros en RAM mediante `ArrayList` al iniciar el sistema y sincroniza instantáneamente las altas y ediciones tanto en memoria como en la base de datos a través de `db_call_sp("SP_INSERT_ROLE")` y `db_call_sp("SP_EDIT_ROLE")`.
-
----
-
-## 🔄 Flujo de Ejecución y Solicitud (Ciclo de Vida del Backend)
-
-```text
-[ Cliente HTTP / SPA ]
-         │
-         │  1. Petición POST /login
-         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ backend_server.c (Socket Receptor puerto 5000)              │
-│  - Recibe el payload HTTP y extrae el cuerpo/método        │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           │  2. Despacha vía routes.c
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│ users_service.c (Handler: route_post_login)                 │
-│  - Decodifica los parámetros con url_decode                 │
-│  - Calcula el Hash SHA-256 de la clave recibida             │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           │  3. Invoca db_call_sp("SP_USER_LOGIN", ...)
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│ db.c + db_catalog.c (Fachada Blackbox)                      │
-│  - Resuelve "SP_USER_LOGIN" -> "sp_users_login"             │
-│  - Escapa parámetros para evitar Inyección SQL              │
-│  - Ejecuta CALL sp_users_login('email') en MariaDB         │
-│  - Empaqueta el resultado en DB_DataSet                     │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           │  4. Retorna DB_DataSet poblado
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│ users_service.c                                             │
-│  - Compara el hash retenido en ds.data[0][3]                │
-│  - Genera token de 128 bytes mediante tokenGenerator()      │
-│  - Registra sesión activa en session_manager_crear()        │
-│  - Construye la respuesta JSON                              │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           │  5. Liberación de recursos
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│ db_free_dataset(&ds) -> Cierra matriz neutra en RAM         │
-│ send_response()      -> Envía HTTP 200 OK con JSON        │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ---
 
@@ -204,3 +151,38 @@ if (db_call_sp("SP_USER_LOGIN", params, 1, &ds) == 0 && ds.num_rows > 0) {
 ```
 
 Las estructuras `DB_DataSet` liberan su memoria asignada explícitamente con `db_free_dataset(&ds)`, garantizando cero fugas de memoria (*memory leaks*) en el backend.
+
+---
+
+## 🎨 Documentación para Desarrolladores - FRONTEND
+
+### Arquitectura de Interfaz SPA
+
+El frontend de **chassisCore** es una Single Page Application (SPA) modular escrita en **JavaScript ES6+ nativo y CSS3 puro**. No utiliza librerías externas ni herramientas de compilación/bundling.
+
+Es servido directamente por el ejecutable C a través de `frontend_server.c` en el puerto `5001` y consume los servicios API REST exponiendo respuestas JSON en el puerto `5000`.
+
+### Componentes y Estructura (`frontend/templates/views/CoreUI/`)
+
+* **`logic/components/libcore.js` (Kernel Frontend)**:
+  * Controla la navegación del cliente (Router SPA sin recarga de página).
+  * Gestiona los tokens de sesión de 128 bytes y las cabeceras HTTP de autenticación.
+  * Provee las funciones `syncUserTheme(username)` y `saveUserTheme(username, theme)` para interactuar con los endpoints del backend `/theme/get` y `/theme/set`.
+
+* **`logic/components/tables.js` (Motor de Tablas Dinámicas)**:
+  * Procesa conjuntos de datos neutros (`DB_DataSet`) devueltos en JSON por las APIs.
+  * Construye tablas HTML enriquecidas con paginación en tiempo real, buscador global instantáneo, ordenación por encabezados y botones de exportación a CSV, PDF y Excel.
+
+* **`css/themes.css` (Engine de 12 Temas Visuales)**:
+  * Almacena las definiciones CSS3 basadas en Custom Properties (`--bg-primary`, `--accent-color`, `--text-main`, etc.).
+  * Permite la conmutación instantánea del entorno entre 12 temas (incluyendo **Ubuntu Ambiance Darkness GTK3**, **Win11**, **Cyberpunk**, etc.) cambiando el atributo `data-theme` en el documento HTML.
+
+* **`css/animations-advanced.css` & `loaders.css`**:
+  * Proporcionan animaciones fluidas de UI: animaciones **Skeleton** durante peticiones asíncronas, efectos **Ripple** en botones y elementos interactivos, e indicadores de espera con spinners y relojes analógicos/digitales animables.
+
+### Sincronización y Persistencia de Temas
+
+1. Al iniciar la SPA, `libcore.js` invoca a `GET /theme/get?user=[usuario]`.
+2. El backend (`theme_handler.c`) consulta el archivo de configuración en `frontend/theme_config/[usuario]-theme.conf`.
+3. El tema retornado se aplica globalmente en el DOM sin recargar la página web.
+4. Cuando el usuario cambia el tema desde el selector de la UI, se invoca `POST /theme/set`. En entorno de desarrollo/producción, la nueva preferencia se guarda en disco; en **Modo DEMO**, la preferencia se aplica únicamente en la memoria de la sesión actual sin alterar archivos en disco.
